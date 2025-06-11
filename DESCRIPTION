@@ -30,7 +30,7 @@ Depends:
 Imports:
     lme4,
     dplyr (>= 1.1.1),
-    ggplot2 (>= 3.3.0),
+    ggplot2 (>= 3.5.2),
     jsonlite,
     truncnorm,
     rlang
