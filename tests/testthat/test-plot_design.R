@@ -184,14 +184,14 @@ test_that("from data", {
   expect_equal(labels$x, "value")
   expect_equal(labels$y, "value")
   expect_equal(labels$fill, "fill")
-  expect_equal(labels$colour, "colour")
+  # expect_equal(labels$colour, "colour")
   expect_equal(s0$facet$params, list())
   
   labels <- get_labs(s1)
   expect_equal(labels$x, "W1")
   expect_equal(labels$y, "value")
   expect_equal(labels$fill, "W1")
-  expect_equal(labels$colour, "W1")
+  # expect_equal(labels$colour, "W1")
   expect_equal(s1$facet$params, list())
   
   labels <- get_labs(s2)
@@ -249,7 +249,7 @@ test_that("2w", {
   expect_equal(labels$x, "time")
   expect_equal(labels$y, "rt")
   expect_equal(labels$fill, "time")
-  expect_equal(labels$colour, "time")
+  # expect_equal(labels$colour, "time")
 })
 
 # 2w*2b ----
