@@ -39,7 +39,7 @@ devtools::install_github("scienceverse/faux")
 See the [Simulate by Design vignette](articles/sim_design.html) for more details.
 
 
-```r
+``` r
 between <- list(pet = c(cat = "Cat Owners", 
                         dog = "Dog Owners"))
 within <- list(time = c("morning", 
@@ -60,7 +60,7 @@ df <- sim_design(within, between,
 
 
 
-```r
+``` r
 p1 <- plot_design(df)
 p2 <- plot_design(df, "pet", "time")
 
@@ -74,7 +74,7 @@ cowplot::plot_grid(p1, p2, nrow = 2, align = "v")
 See the [Simulate from Existing Data vignette](articles/sim_df.html) for more details.
 
 
-```r
+``` r
 new_iris <- sim_df(iris, 50, between = "Species") 
 ```
 
@@ -85,7 +85,7 @@ new_iris <- sim_df(iris, 50, between = "Species")
 You can build up a cross-classified or nested mixed effects design using piped functions. See the [contrasts vignette](articles/contrasts.html) for more details.
 
 
-```r
+``` r
 # simulate 20 classes with 20 to 30 students per class
 data <- add_random(class = 20) %>%
   add_random(student = sample(20:30, 20, replace = TRUE), 
@@ -99,14 +99,17 @@ data <- add_random(class = 20) %>%
 ```
 
 
+
 |school_type |gender |   n|
 |:-----------|:------|---:|
-|private     |M      |  58|
-|private     |F      |  65|
-|private     |NB     |   2|
-|public      |M      | 164|
-|public      |F      | 191|
-|public      |NB     |   7|
+|private     |M      |  73|
+|private     |F      |  55|
+|private     |NB     |   1|
+|public      |M      | 168|
+|public      |F      | 201|
+|public      |NB     |   8|
+
+
 
 
 
