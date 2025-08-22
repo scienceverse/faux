@@ -328,7 +328,7 @@ test_that("rmulti impossible r", {
 })
 
 test_that("rmulti 5", {
-  # https://github.com/debruine/faux/issues/107
+  # https://github.com/scienceverse/faux/issues/107
   r <- c(1, 0.1, 0.2, 0.3, 0.4,
          0.1, 1, 0.5, 0.6, 0.7,
          0.2, 0.5, 1, 0.8, 0.1,

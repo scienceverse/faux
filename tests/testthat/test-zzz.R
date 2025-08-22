@@ -18,7 +18,7 @@ test_that("loading", {
 #   
 #   startup <- "************
 # Welcome to faux. For support and examples visit:
-# http://debruine.github.io/faux/
+# http://scienceverse.github.io/faux/
 # - Get and set global package options with: faux_options()
 # ************"
 #   

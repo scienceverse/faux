@@ -119,7 +119,7 @@ test_that("get it wrong", {
 })
 
 test_that("issue106", {
-  # https://github.com/debruine/faux/issues/106
+  # https://github.com/scienceverse/faux/issues/106
   
   
   # set up canonical design

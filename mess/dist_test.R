@@ -1,4 +1,4 @@
-#devtools::install_github("debruine/faux")
+#devtools::install_github("scienceverse/faux")
 library(faux)
 
 # compare the correlations between simulated normally distributed data and the likert-scale version

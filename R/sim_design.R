@@ -1,6 +1,6 @@
 #' Simulate data from design
 #'
-#' Generates a data table with a specified within and between design. See \href{https://debruine.github.io/faux/articles/sim_design.html}{\code{vignette("sim_design", package = "faux")}} for examples and details.
+#' Generates a data table with a specified within and between design. See \href{https://scienceverse.github.io/faux/articles/sim_design.html}{\code{vignette("sim_design", package = "faux")}} for examples and details.
 #'
 #' @param within a list of the within-subject factors
 #' @param between a list of the between-subject factors

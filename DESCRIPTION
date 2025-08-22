@@ -24,7 +24,7 @@ Authors@R: c(
         email = "andrew@andrewheiss.com",
         comment = c(ORCID = "0000-0002-3948-3914")
     ))
-Description: Create datasets with factorial structure through simulation by specifying variable parameters. Extended documentation at <https://debruine.github.io/faux/>. Described in DeBruine (2020) <doi:10.5281/zenodo.2669586>.
+Description: Create datasets with factorial structure through simulation by specifying variable parameters. Extended documentation at <https://scienceverse.github.io/faux/>. Described in DeBruine (2020) <doi:10.5281/zenodo.2669586>.
 Depends:
     R (>= 3.2.4)
 Imports:
@@ -57,7 +57,7 @@ VignetteBuilder: knitr
 RoxygenNote: 7.3.2
 Encoding: UTF-8
 LazyData: true
-URL: https://github.com/debruine/faux,
-    https://debruine.github.io/faux/
-BugReports: https://github.com/debruine/faux/issues
+URL: https://github.com/scienceverse/faux,
+    https://scienceverse.github.io/faux/
+BugReports: https://github.com/scienceverse/faux/issues
 Config/Needs/website: rmarkdown

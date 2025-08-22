@@ -35,7 +35,7 @@ Finally, the subject table, questionnaire table, and instructions are saved to a
 Some of the functions below require version 1.1.0 of faux (`add_random()`, `add_between()`, `add_ranef()` and `add_contrast()`). Any feedback would be welcome.
 
 ```{r setup, message=FALSE}
-# devtools::install_github("debruine/faux")
+# devtools::install_github("scienceverse/faux")
 library(faux)
 library(dplyr)
 library(tidyr)

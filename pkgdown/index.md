@@ -6,9 +6,9 @@
 ![CRAN version](https://www.r-pkg.org/badges/version-last-release/faux)
 ![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/faux)
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![Travis build status](https://travis-ci.org/debruine/faux.svg?branch=master)](https://travis-ci.org/debruine/faux)
-[![Coverage status](https://codecov.io/gh/debruine/faux/branch/master/graph/badge.svg)](https://codecov.io/github/debruine/faux?branch=master)
-[![R-CMD-check](https://github.com/debruine/faux/workflows/R-CMD-check/badge.svg)](https://github.com/debruine/faux/actions)
+[![Travis build status](https://travis-ci.org/scienceverse/faux.svg?branch=master)](https://travis-ci.org/scienceverse/faux)
+[![Coverage status](https://codecov.io/gh/scienceverse/faux/branch/master/graph/badge.svg)](https://codecov.io/github/scienceverse/faux?branch=master)
+[![R-CMD-check](https://github.com/scienceverse/faux/workflows/R-CMD-check/badge.svg)](https://github.com/scienceverse/faux/actions)
 <!-- badges: end -->
 
 
@@ -25,11 +25,11 @@ You can install the released version of faux from [CRAN](https://CRAN.R-project.
 install.packages("faux")
 ```
 
-And the development version from [GitHub](https://github.com/debruine/faux) with:
+And the development version from [GitHub](https://github.com/scienceverse/faux) with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("debruine/faux")
+devtools::install_github("scienceverse/faux")
 ```
 
 ## Quick overview

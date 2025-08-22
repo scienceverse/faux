@@ -11,9 +11,9 @@ The faux package provides functions for simulating datasets with specified struc
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/debruine/faux}
-  \item \url{https://debruine.github.io/faux/}
-  \item Report bugs at \url{https://github.com/debruine/faux/issues}
+  \item \url{https://github.com/scienceverse/faux}
+  \item \url{https://scienceverse.github.io/faux/}
+  \item Report bugs at \url{https://github.com/scienceverse/faux/issues}
 }
 
 }
