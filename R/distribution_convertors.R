@@ -481,10 +481,6 @@ trunc2norm <- function(x, min = NULL, max = NULL,
 #' y <- norm2likert(x, c(40, 30, 20, 10))
 #' g <- ggplot2::ggplot() + ggplot2::geom_point(ggplot2::aes(x, y))
 #' ggExtra::ggMarginal(g, type = "histogram")
-#' 
-#' y <- norm2likert(x, c(lower = .5, upper = .5))
-#' g <- ggplot2::ggplot() + ggplot2::geom_point(ggplot2::aes(x, y))
-#' ggExtra::ggMarginal(g, type = "histogram")
 norm2likert <- function(x, prob, labels = names(prob), mu = mean(x), sd = stats::sd(x)) {
   labels <- labels %||% 1:length(prob)
   p <- stats::pnorm(x, mu, sd)

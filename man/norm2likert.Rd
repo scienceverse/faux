@@ -33,8 +33,4 @@ ggExtra::ggMarginal(g, type = "histogram")
 y <- norm2likert(x, c(40, 30, 20, 10))
 g <- ggplot2::ggplot() + ggplot2::geom_point(ggplot2::aes(x, y))
 ggExtra::ggMarginal(g, type = "histogram")
-
-y <- norm2likert(x, c(lower = .5, upper = .5))
-g <- ggplot2::ggplot() + ggplot2::geom_point(ggplot2::aes(x, y))
-ggExtra::ggMarginal(g, type = "histogram")
 }

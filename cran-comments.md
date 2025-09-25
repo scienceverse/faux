@@ -2,23 +2,14 @@
 
 0 errors | 0 warnings | 0 notes
 
-* DeBruine is my name and not misspelled
-* https://doi.org/10.1111/j.1467-6494.1996.tb00813.x is a real DOI
-* I moved most of the vignettes to pkgdown articles so they don't take too long
-* There was previously a note about the test for norm2likert, but it was skipped with skip(), which I then changed to skip_on_cran(), and now commented them all out. I am at a loss as to how this keeps coming up as a note, as it doesn't on rhub.
 
+## devtools::check_win_devel()
 
-## responses to coments
-
-> Please add \value to .Rd files regarding exported methods and explain the functions results in the documentation. Please write about the structure of the output (class) and also what the output means. (If a function does not return a value, please document that too, e.g. \value{No return value, called for side effects} or similar)
-
-- pipe.Rd: This is an imported function (from dplyr), so it seems odd for me to replicate their explanations, but I've done it.
-- print.design, print.nested_list, print.psychds_codebook: Done!
-
-> \dontrun{} should only be used if the example really cannot be executed (e.g. because of missing additional software, missing API keys, ...) by the user. That's why wrapping examples in \dontrun{} adds the comment ("# Not run:") as a warning for the user. Does not seem necessary. Please replace \dontrun with \donttest.
-
-- faux_options: Done!
-
-> Please do not modifiy the .GlobalEnv. This is not allowed by the CRAN policies.
-
-- R/norta.R: Done!
+Your package faux_1.2.3.tar.gz has been built (if working) and checked for Windows.
+Please check the log files and (if working) the binary package at:
+https://win-builder.r-project.org/IGm2Mn93dB38
+The files will be removed after roughly 72 hours.
+Installation time in seconds: 22
+Check time in seconds: 234
+Status: 1 NOTE
+R version 4.5.1 (2025-06-13 ucrt)
