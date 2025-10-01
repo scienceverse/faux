@@ -23,14 +23,3 @@ a vector with the specified distribution
 \description{
 Convert normal to likert
 }
-\examples{
-
-x <- rnorm(10000)
-y <- norm2likert(x, c(.1, .2, .35, .2, .1, .05))
-g <- ggplot2::ggplot() + ggplot2::geom_point(ggplot2::aes(x, y))
-ggExtra::ggMarginal(g, type = "histogram")
-
-y <- norm2likert(x, c(40, 30, 20, 10))
-g <- ggplot2::ggplot() + ggplot2::geom_point(ggplot2::aes(x, y))
-ggExtra::ggMarginal(g, type = "histogram")
-}

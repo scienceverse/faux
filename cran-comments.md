@@ -13,3 +13,7 @@ Installation time in seconds: 22
 Check time in seconds: 234
 Status: 1 NOTE
 R version 4.5.1 (2025-06-13 ucrt)
+
+## Resubmission due to failed check
+
+Sorry! That norm2likert example runs faster on my machine and seems to take just over 10 seconds on yours. I removed it.
