@@ -93,15 +93,15 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">v1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">v2</span> <span class="op">&lt;-</span> <span class="fu">rnorm_pre</span><span class="op">(</span><span class="va">v1</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0.5</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html" class="external-link">cor</a></span><span class="op">(</span><span class="va">v1</span>, <span class="va">v2</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.1859244</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.4467341</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="rnorm_multi.html">rnorm_multi</a></span><span class="op">(</span><span class="fl">50</span>, <span class="fl">2</span>, <span class="fl">.5</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">x</span><span class="op">$</span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu">rnorm_pre</span><span class="op">(</span><span class="va">x</span>, r <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.5</span>, <span class="fl">0.25</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html" class="external-link">cor</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>            X1         X2         y</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> X1  1.0000000 -0.2610896 0.5405017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> X2 -0.2610896  1.0000000 0.3485443</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> y   0.5405017  0.3485443 1.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           X1         X2          y</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> X1 1.0000000 0.20506513 0.29079287</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> X2 0.2050651 1.00000000 0.03505994</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> y  0.2907929 0.03505994 1.00000000</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
