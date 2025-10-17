@@ -1,6 +1,6 @@
 # faux 1.2.3 (2025-09-25)
 
-* Fixed failing tests due to ggplot2 4.0 ggplot object sturcture changes
+* Fixed failing tests due to ggplot2 4.0 ggplot object structure changes
 * Moved to https://github.com/scienceverse/faux
 * Website is now https://scienceverse.github.io/faux
 
