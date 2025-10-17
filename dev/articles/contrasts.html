@@ -5,86 +5,64 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="faux">
 <title>Contrasts • faux</title>
-<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
-<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
+<!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+<link rel="icon" type="”image/svg+xml”" href="../favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="icon" sizes="any" href="../favicon.ico">
+<link rel="manifest" href="../site.webmanifest">
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="../deps/bootstrap-5.2.2/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><script src="../extra.js"></script><meta property="og:title" content="Contrasts">
-<meta property="og:description" content="faux">
-<meta property="og:image" content="https://debruine.github.io/faux/reference/figures/card.png">
-<meta property="og:image:alt" content="Rainbow hexagon with the word FAUX">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:creator" content="@lisadebruine">
-<meta name="twitter:site" content="@lisadebruine">
+<link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><script src="../extra.js"></script><meta property="og:title" content="Contrasts">
 <meta name="robots" content="noindex">
-<!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
-    
 
-    <nav class="navbar fixed-top navbar-light navbar-expand-lg bg-light"><div class="container">
-    
+
+    <nav class="navbar navbar-expand-lg fixed-top bg-light" data-bs-theme="light" aria-label="Site navigation"><div class="container">
+
     <a class="navbar-brand me-2" href="../index.html">faux</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">1.2.1.9001</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">1.2.3.9000</small>
 
-    
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
-<li class="nav-item">
-  <a class="nav-link" href="../reference/index.html">Reference</a>
-</li>
+<li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
 <li class="active nav-item dropdown">
-  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
-  <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="../articles/sim_design.html">Simulate by Design</a>
-    <a class="dropdown-item" href="../articles/rnorm_multi.html">Simulate Correlated Variables</a>
-    <a class="dropdown-item" href="../articles/norta.html">NORTA</a>
-    <a class="dropdown-item" href="../articles/sim_df.html">Simulate from Existing Data</a>
-    <a class="dropdown-item" href="../articles/continuous.html">Continuous Predictors</a>
-    <a class="dropdown-item" href="../articles/plots.html">Plotting</a>
-    <a class="dropdown-item" href="../articles/sim_mixed.html">Mixed Design Simulation</a>
-    <a class="dropdown-item" href="../articles/random_reports.html">Randomised Reports</a>
-    <a class="dropdown-item" href="../articles/distributions.html">Distribution Conversions</a>
-    <a class="dropdown-item" href="../articles/codebook.html">Codebook Demo</a>
-    <a class="dropdown-item" href="../articles/contrasts.html">Contrasts</a>
-  </div>
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
+<li><a class="dropdown-item" href="../articles/sim_design.html">Simulate by Design</a></li>
+    <li><a class="dropdown-item" href="../articles/rnorm_multi.html">Simulate Correlated Variables</a></li>
+    <li><a class="dropdown-item" href="../articles/norta.html">NORTA</a></li>
+    <li><a class="dropdown-item" href="../articles/sim_df.html">Simulate from Existing Data</a></li>
+    <li><a class="dropdown-item" href="../articles/continuous.html">Continuous Predictors</a></li>
+    <li><a class="dropdown-item" href="../articles/plots.html">Plotting</a></li>
+    <li><a class="dropdown-item" href="../articles/sim_mixed.html">Mixed Design Simulation</a></li>
+    <li><a class="dropdown-item" href="../articles/random_reports.html">Randomised Reports</a></li>
+    <li><a class="dropdown-item" href="../articles/distributions.html">Distribution Conversions</a></li>
+    <li><a class="dropdown-item" href="../articles/codebook.html">Codebook Demo</a></li>
+    <li><a class="dropdown-item" href="../articles/contrasts.html">Contrasts</a></li>
+  </ul>
 </li>
-<li class="nav-item">
-  <a class="nav-link" href="../news/index.html">Changelog</a>
-</li>
+<li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul>
-<form class="form-inline my-2 my-lg-0" role="search">
-        <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off">
-</form>
-
-      <ul class="navbar-nav">
-<li class="nav-item">
-  <a class="external-link nav-link" href="https://github.com/debruine/faux/" aria-label="github">
-    <span class="fab fa fab fa-github fa-lg"></span>
-     
-  </a>
-</li>
+<ul class="navbar-nav">
+<li class="nav-item"><form class="form-inline" role="search">
+ <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
+</form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/scienceverse/faux/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
-    
+
   </div>
 </nav><div class="container template-article">
 
@@ -96,7 +74,7 @@
       <img src="../logo.png" class="logo" alt=""><h1>Contrasts</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/debruine/faux/blob/HEAD/vignettes/contrasts.Rmd" class="external-link"><code>vignettes/contrasts.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/scienceverse/faux/blob/master/vignettes/articles/contrasts.Rmd" class="external-link"><code>vignettes/articles/contrasts.Rmd</code></a></small>
       <div class="d-none name"><code>contrasts.Rmd</code></div>
     </div>
 
@@ -122,7 +100,7 @@ to everyone who recommended them).</p>
 <a href="https://marissabarlaz.github.io/portfolio/contrastcoding/" class="external-link">Contrasts
 in R</a> by Marissa Barlaz</li>
 <li>
-<a href="https://talklab.psy.gla.ac.uk/tvw/catpred/" class="external-link">Coding
+<a href="https://psyteachr.github.io/stat-models-v1/interactions.html#code-your-own-categorical-predictors-in-factorial-designs" class="external-link">Coding
 categorical predictor variables in factorial designs</a> by Dale
 Barr</li>
 <li>
@@ -168,7 +146,7 @@ codings by others.</p>
 <tbody>
 <tr class="odd">
 <td align="left"><a href="#treatment">Treatment</a></td>
-<td align="left">Treatment (<a href="https://talklab.psy.gla.ac.uk/tvw/catpred/#what-are-the-key-coding-schemes" class="external-link">2</a>),
+<td align="left">Treatment (<a href="https://psyteachr.github.io/stat-models-v1/interactions.html#the-key-coding-schemes" class="external-link">2</a>),
 Dummy (<a href="https://marissabarlaz.github.io/portfolio/contrastcoding/#dummy-coding" class="external-link">1</a>,
 <a href="https://stats.oarc.ucla.edu/r/library/r-library-contrast-coding-systems-for-categorical-variables/#dummy" class="external-link">4</a>,
 <a href="https://phillipalday.com/stats/coding.html#simple-regression-dummy-coding" class="external-link">6</a>),
@@ -178,7 +156,7 @@ Simple (<a href="https://gamlj.github.io/rosetta_contrasts.html#Contrast:_Simple
 </tr>
 <tr class="even">
 <td align="left"><a href="#anova">Anova</a></td>
-<td align="left">Deviation (<a href="https://talklab.psy.gla.ac.uk/tvw/catpred/#what-are-the-key-coding-schemes" class="external-link">2</a>),
+<td align="left">Deviation (<a href="https://psyteachr.github.io/stat-models-v1/interactions.html#the-key-coding-schemes" class="external-link">2</a>),
 Contrast (<a href="https://marissabarlaz.github.io/portfolio/contrastcoding/#contrast-coding" class="external-link">1</a>),
 Simple (<a href="https://stats.oarc.ucla.edu/r/library/r-library-contrast-coding-systems-for-categorical-variables/#SIMPLE" class="external-link">4</a>)</td>
 <td align="left"><code>contr.treatment - 1/k</code></td>
@@ -187,7 +165,7 @@ Simple (<a href="https://stats.oarc.ucla.edu/r/library/r-library-contrast-coding
 <tr class="odd">
 <td align="left"><a href="#sum">Sum</a></td>
 <td align="left">Sum (<a href="https://marissabarlaz.github.io/portfolio/contrastcoding/#sum-coding" class="external-link">1</a>,
-<a href="https://talklab.psy.gla.ac.uk/tvw/catpred/#what-are-the-key-coding-schemes" class="external-link">2</a>,
+<a href="https://psyteachr.github.io/stat-models-v1/interactions.html#the-key-coding-schemes" class="external-link">2</a>,
 <a href="https://phillipalday.com/stats/coding.html#simple-regression-sum-coding" class="external-link">6</a>),
 Effects (<a href="https://doi.org/10.6339/JDS.2010.08(1).563" class="external-link">3</a>),
 Deviation (<a href="https://stats.oarc.ucla.edu/r/library/r-library-contrast-coding-systems-for-categorical-variables/#SIMPLE" class="external-link">4</a>,
@@ -237,9 +215,13 @@ interpreting the estimates easier.</p>
 <p><img src="contrasts_files/figure-html/unnamed-chunk-1-1.png" width="100%"></p>
 <p>Notice that the default contrast is treatment coding, with “cat” as
 the baseline condition. The estimate for the intercept is the mean value
-for cats (<span class="math inline">\(2\)</span>), while the term
-<code>petdog</code> is the mean value for dogs minus cats (<span class="math inline">\(4 - 2\)</span>), and the term
-<code>petferret</code> is the mean value for ferrets minus cats (<span class="math inline">\(9 - 2\)</span>).</p>
+for cats
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math>),
+while the term <code>petdog</code> is the mean value for dogs minus cats
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">4 - 2</annotation></semantics></math>),
+and the term <code>petferret</code> is the mean value for ferrets minus
+cats
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>9</mn><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">9 - 2</annotation></semantics></math>).</p>
 <table class="table ctable table">
 <thead><tr>
 <th>
@@ -542,7 +524,8 @@ pet.ferret-cat
 </table>
 <p>Each contrast compares one level with the reference level, which
 defaults to the first level, but you can set with the <code>base</code>
-argument. Now the intercept estimates the mean value for dogs (<span class="math inline">\(4\)</span>).</p>
+argument. Now the intercept estimates the mean value for dogs
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>4</mn><annotation encoding="application/x-tex">4</annotation></semantics></math>).</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span><span class="op">$</span><span class="va">pet</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/contr_code_treatment.html">contr_code_treatment</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">pet</span>, base <span class="op">=</span> <span class="st">"dog"</span><span class="op">)</span></span></code></pre></div>
 <table class="table ctable table">
@@ -827,12 +810,15 @@ level. This gives us values that are relatively easy to interpret and
 map onto ANOVA values.</p>
 <p>Below is anova coding with the first level (“cat”) as the default
 base. Now the intercept is the grand mean, which is the mean of the
-three group means (<span class="math inline">\((2 + 4 + 9)/3\)</span>).
+three group means
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mo>+</mo><mn>4</mn><mo>+</mo><mn>9</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">(2 + 4 + 9)/3</annotation></semantics></math>).
 Notice that this is different from the mean value of y in our dataset
 (5, since the number of pets in each group is unbalanced. The term
-<code>pet_dog-cat</code> is the mean value for dogs minus cats (<span class="math inline">\(4 - 2\)</span>) and the term
-<code>pet_ferret-cat</code> is the mean value for ferrets minus cats
-(<span class="math inline">\(9 - 2\)</span>).</p>
+<code>pet_dog-cat</code> is the mean value for dogs minus cats
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">4 - 2</annotation></semantics></math>)
+and the term <code>pet_ferret-cat</code> is the mean value for ferrets
+minus cats
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>9</mn><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">9 - 2</annotation></semantics></math>).</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span><span class="op">$</span><span class="va">pet</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/contr_code_anova.html">contr_code_anova</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">pet</span><span class="op">)</span></span></code></pre></div>
 <table class="table ctable table">
@@ -1253,8 +1239,8 @@ pet.dog-ferret
 <p>Sum coding also sets the grand mean as the intercept. Each contrast
 compares one level with the grand mean. Therefore, the estimate for
 <code>pet_cat-intercept</code> is the difference between the mean value
-for cats and the grand mean (<span class="math inline">\(2 -
-5\)</span>).</p>
+for cats and the grand mean
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>−</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">2 - 5</annotation></semantics></math>).</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span><span class="op">$</span><span class="va">pet</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/contr_code_sum.html">contr_code_sum</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">pet</span><span class="op">)</span></span></code></pre></div>
 <table class="table ctable table">
@@ -1961,7 +1947,8 @@ compares one level with the mean of previous levels. This coding is
 somewhat different than the results from
 <code><a href="https://rdrr.io/r/stats/contrast.html" class="external-link">stats::contr.helmert()</a></code> to make it easier to interpret the
 estimates. Thus, <code>pet_ferret-cat.dog</code> is the mean value for
-ferrets minus the mean value for cats and dogs averaged together (<span class="math inline">\(9-(2+4)/2\)</span>).</p>
+ferrets minus the mean value for cats and dogs averaged together
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>9</mn><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mo>+</mo><mn>4</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">9-(2+4)/2</annotation></semantics></math>).</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span><span class="op">$</span><span class="va">pet</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/contr_code_helmert.html">contr_code_helmert</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">pet</span><span class="op">)</span></span></code></pre></div>
 <table class="table ctable table">
@@ -2689,25 +2676,13 @@ pet.dog-cat
 pet.ferret-cat
 </th>
 <th style="text-align:right;">
-pet.dog-cat.aov
-</th>
-<th style="text-align:right;">
-pet.ferret-cat.aov
-</th>
-<th style="text-align:right;">
 pet.cat-intercept
 </th>
 <th style="text-align:right;">
 pet.dog-intercept
 </th>
 <th style="text-align:right;">
-pet.dog-cat.dif
-</th>
-<th style="text-align:right;">
 pet.ferret-dog
-</th>
-<th style="text-align:right;">
-pet.dog-cat.hmt
 </th>
 <th style="text-align:right;">
 pet.ferret-cat.dog
@@ -2731,13 +2706,7 @@ cat
 -0.72
 </td>
 <td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
--0.33
+-0.5
 </td>
 <td style="text-align:right;">
 -0.33
@@ -2749,13 +2718,7 @@ cat
 0
 </td>
 <td style="text-align:right;">
--0.67
-</td>
-<td style="text-align:right;">
 -0.33
-</td>
-<td style="text-align:right;">
--0.5
 </td>
 <td style="text-align:right;">
 -0.33
@@ -2778,31 +2741,19 @@ dog
 -0.36
 </td>
 <td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0.67
-</td>
-<td style="text-align:right;">
--0.33
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-0.33
-</td>
-<td style="text-align:right;">
--0.33
-</td>
-<td style="text-align:right;">
 0.5
+</td>
+<td style="text-align:right;">
+-0.33
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+-0.33
 </td>
 <td style="text-align:right;">
 -0.33
@@ -2825,31 +2776,19 @@ ferret
 -1.43
 </td>
 <td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
--0.33
-</td>
-<td style="text-align:right;">
-0.67
-</td>
-<td style="text-align:right;">
--1
-</td>
-<td style="text-align:right;">
--1
-</td>
-<td style="text-align:right;">
-0.33
-</td>
-<td style="text-align:right;">
-0.67
-</td>
-<td style="text-align:right;">
 0.0
+</td>
+<td style="text-align:right;">
+0.67
+</td>
+<td style="text-align:right;">
+-1
+</td>
+<td style="text-align:right;">
+-1
+</td>
+<td style="text-align:right;">
+0.67
 </td>
 <td style="text-align:right;">
 0.67
@@ -2879,12 +2818,14 @@ in different ways.</p>
 <span>                                pet <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"cat"</span>, <span class="st">"dog"</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>                 n <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">50</span>, <span class="fl">60</span>, <span class="fl">70</span>, <span class="fl">80</span><span class="op">)</span>, mu <span class="op">=</span> <span class="va">mu</span>, empirical <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <p><img src="contrasts_files/figure-html/unnamed-chunk-23-1.png" width="100%"></p>
-<p>The table below shows the cell and marginal means. The notation <span class="math inline">\(Y_{..}\)</span> is used to denote a mean for a
-specific grouping. The <code>.</code> is used to indicate the mean over
-all groups of that factor; <code>Y..</code> is the grand mean. While
-you’ll usually see the subscripts written as numbers to indicate the
-factor levels, we’re using letters here so you don’t have to keep
-referring to the order of factors and levels.</p>
+<p>The table below shows the cell and marginal means. The notation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Y</mi><mrow><mi>.</mi><mi>.</mi></mrow></msub><annotation encoding="application/x-tex">Y_{..}</annotation></semantics></math>
+is used to denote a mean for a specific grouping. The <code>.</code> is
+used to indicate the mean over all groups of that factor;
+<code>Y..</code> is the grand mean. While you’ll usually see the
+subscripts written as numbers to indicate the factor levels, we’re using
+letters here so you don’t have to keep referring to the order of factors
+and levels.</p>
 <table class="table">
 <thead><tr class="header">
 <th></th>
@@ -2895,21 +2836,21 @@ referring to the order of factors and levels.</p>
 <tbody>
 <tr class="odd">
 <td><strong>am</strong></td>
-<td><span class="math inline">\(Y_{ca} = 0\)</span></td>
-<td><span class="math inline">\(Y_{da} = 4\)</span></td>
-<td><span class="math inline">\(Y_{.a} = 2\)</span></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>c</mi><mi>a</mi></mrow></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">Y_{ca} = 0</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>d</mi><mi>a</mi></mrow></msub><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">Y_{da} = 4</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>.</mi><mi>a</mi></mrow></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">Y_{.a} = 2</annotation></semantics></math></td>
 </tr>
 <tr class="even">
 <td><strong>pm</strong></td>
-<td><span class="math inline">\(Y_{cp} = 6\)</span></td>
-<td><span class="math inline">\(Y_{dp} = 10\)</span></td>
-<td><span class="math inline">\(Y_{.p} = 8\)</span></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>c</mi><mi>p</mi></mrow></msub><mo>=</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">Y_{cp} = 6</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>d</mi><mi>p</mi></mrow></msub><mo>=</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">Y_{dp} = 10</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>.</mi><mi>p</mi></mrow></msub><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">Y_{.p} = 8</annotation></semantics></math></td>
 </tr>
 <tr class="odd">
 <td><strong>mean</strong></td>
-<td><span class="math inline">\(Y_{c.} = 3\)</span></td>
-<td><span class="math inline">\(Y_{d.} = 7\)</span></td>
-<td><span class="math inline">\(Y_{..} = 5\)</span></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>c</mi><mi>.</mi></mrow></msub><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">Y_{c.} = 3</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>d</mi><mi>.</mi></mrow></msub><mo>=</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">Y_{d.} = 7</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>.</mi><mi>.</mi></mrow></msub><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">Y_{..} = 5</annotation></semantics></math></td>
 </tr>
 </tbody>
 </table>
@@ -2947,30 +2888,26 @@ referring to the order of factors and levels.</p>
 <tr class="odd">
 <td align="left">intercept</td>
 <td align="left">cat when am</td>
-<td align="left"><span class="math inline">\(Y_{ca}\)</span></td>
-<td align="left"><span class="math inline">\(0\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Y</mi><mrow><mi>c</mi><mi>a</mi></mrow></msub><annotation encoding="application/x-tex">Y_{ca}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></td>
 </tr>
 <tr class="even">
 <td align="left">pet.dog-cat</td>
 <td align="left">dog minus cat, when am</td>
-<td align="left"><span class="math inline">\(Y_{da} -
-Y_{ca}\)</span></td>
-<td align="left"><span class="math inline">\(4 - 0 = 4\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>d</mi><mi>a</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>a</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{da} - Y_{ca}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mo>−</mo><mn>0</mn><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">4 - 0 = 4</annotation></semantics></math></td>
 </tr>
 <tr class="odd">
 <td align="left">time.pm-am</td>
 <td align="left">pm minus am, for cats</td>
-<td align="left"><span class="math inline">\(Y_{cp} -
-Y_{ca}\)</span></td>
-<td align="left"><span class="math inline">\(6 - 0 = 6\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>c</mi><mi>p</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>a</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{cp} - Y_{ca}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6</mn><mo>−</mo><mn>0</mn><mo>=</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">6 - 0 = 6</annotation></semantics></math></td>
 </tr>
 <tr class="even">
 <td align="left">pet.dog-cat:time.pm-am</td>
 <td align="left">dog minus cat when pm, minus dog minus cat when am</td>
-<td align="left"><span class="math inline">\((Y_{dp} - Y_{cp}) - (Y_{da}
-- Y_{ca})\)</span></td>
-<td align="left"><span class="math inline">\((10 - 6) - (4 - 0) =
-0\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi>d</mi><mi>p</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>p</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi>d</mi><mi>a</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>a</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(Y_{dp} - Y_{cp}) - (Y_{da} - Y_{ca})</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>10</mn><mo>−</mo><mn>6</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>4</mn><mo>−</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">(10 - 6) - (4 - 0) = 0</annotation></semantics></math></td>
 </tr>
 </tbody>
 </table>
@@ -3089,30 +3026,26 @@ pet.dog-cat:time.pm-am
 <tr class="odd">
 <td align="left">intercept</td>
 <td align="left">grand mean</td>
-<td align="left"><span class="math inline">\(Y_{..}\)</span></td>
-<td align="left"><span class="math inline">\(5\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Y</mi><mrow><mi>.</mi><mi>.</mi></mrow></msub><annotation encoding="application/x-tex">Y_{..}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>5</mn><annotation encoding="application/x-tex">5</annotation></semantics></math></td>
 </tr>
 <tr class="even">
 <td align="left">pet.dog-cat</td>
 <td align="left">mean dog minus mean cat</td>
-<td align="left"><span class="math inline">\(Y_{d.} -
-Y_{c.}\)</span></td>
-<td align="left"><span class="math inline">\(7 - 3 = 4\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>d</mi><mi>.</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>.</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{d.} - Y_{c.}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn><mo>−</mo><mn>3</mn><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">7 - 3 = 4</annotation></semantics></math></td>
 </tr>
 <tr class="odd">
 <td align="left">time.pm-am</td>
 <td align="left">mean pm minus mean am</td>
-<td align="left"><span class="math inline">\(Y_{.p} -
-Y_{.a}\)</span></td>
-<td align="left"><span class="math inline">\(8 - 2 = 6\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>.</mi><mi>p</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>.</mi><mi>a</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{.p} - Y_{.a}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8</mn><mo>−</mo><mn>2</mn><mo>=</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">8 - 2 = 6</annotation></semantics></math></td>
 </tr>
 <tr class="even">
 <td align="left">pet.dog-cat:time.pm-am</td>
 <td align="left">dog minus cat when pm, minus dog minus cat when am</td>
-<td align="left"><span class="math inline">\((Y_{dp} - Y_{cp}) - (Y_{da}
-- Y_{ca})\)</span></td>
-<td align="left"><span class="math inline">\((10 - 6) - (4 - 0) =
-0\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi>d</mi><mi>p</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>p</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi>d</mi><mi>a</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>a</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(Y_{dp} - Y_{cp}) - (Y_{da} - Y_{ca})</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>10</mn><mo>−</mo><mn>6</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>4</mn><mo>−</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">(10 - 6) - (4 - 0) = 0</annotation></semantics></math></td>
 </tr>
 </tbody>
 </table>
@@ -3231,31 +3164,27 @@ pet.dog-cat:time.pm-am
 <tr class="odd">
 <td align="left">intercept</td>
 <td align="left">grand mean</td>
-<td align="left"><span class="math inline">\(Y_{..}\)</span></td>
-<td align="left"><span class="math inline">\(3\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Y</mi><mrow><mi>.</mi><mi>.</mi></mrow></msub><annotation encoding="application/x-tex">Y_{..}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>3</mn><annotation encoding="application/x-tex">3</annotation></semantics></math></td>
 </tr>
 <tr class="even">
 <td align="left">pet.cat-intercept</td>
 <td align="left">mean cat minus grand mean</td>
-<td align="left"><span class="math inline">\(Y_{c.} -
-Y_{..}\)</span></td>
-<td align="left"><span class="math inline">\(3 - 5 = -2\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>c</mi><mi>.</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>.</mi><mi>.</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{c.} - Y_{..}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>−</mo><mn>5</mn><mo>=</mo><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">3 - 5 = -2</annotation></semantics></math></td>
 </tr>
 <tr class="odd">
 <td align="left">time.am-intercept</td>
 <td align="left">mean am minus grand mean</td>
-<td align="left"><span class="math inline">\(Y_{.a} -
-Y_{..}\)</span></td>
-<td align="left"><span class="math inline">\(2 - 5 = -3\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>.</mi><mi>a</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>.</mi><mi>.</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{.a} - Y_{..}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>−</mo><mn>5</mn><mo>=</mo><mo>−</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">2 - 5 = -3</annotation></semantics></math></td>
 </tr>
 <tr class="even">
 <td align="left">pet.cat-intercept:time.am-intercept</td>
 <td align="left">cat minus mean when am, minus cat minus mean when pm,
 divided by 2</td>
-<td align="left"><span class="math inline">\(\frac{(Y_{ca} - Y_{.a}) -
-(Y_{cp} - Y_{.p})}{2}\)</span></td>
-<td align="left"><span class="math inline">\(\frac{(0 - 2) - (6 - 8)}{2}
-= 0\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>a</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>.</mi><mi>a</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>p</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>.</mi><mi>p</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mn>2</mn></mfrac><annotation encoding="application/x-tex">\frac{(Y_{ca} - Y_{.a}) - (Y_{cp} - Y_{.p})}{2}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>−</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>6</mn><mo>−</mo><mn>8</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mn>2</mn></mfrac><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\frac{(0 - 2) - (6 - 8)}{2} = 0</annotation></semantics></math></td>
 </tr>
 </tbody>
 </table>
@@ -3374,30 +3303,26 @@ pet.cat-intercept:time.am-intercept
 <tr class="odd">
 <td align="left">intercept</td>
 <td align="left">grand mean</td>
-<td align="left"><span class="math inline">\(Y_{..}\)</span></td>
-<td align="left"><span class="math inline">\(5\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Y</mi><mrow><mi>.</mi><mi>.</mi></mrow></msub><annotation encoding="application/x-tex">Y_{..}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>5</mn><annotation encoding="application/x-tex">5</annotation></semantics></math></td>
 </tr>
 <tr class="even">
 <td align="left">pet.dog-cat</td>
 <td align="left">mean dog minus mean cat</td>
-<td align="left"><span class="math inline">\(Y_{d.} -
-Y_{c.}\)</span></td>
-<td align="left"><span class="math inline">\(7 - 3 = 4\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>d</mi><mi>.</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>.</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{d.} - Y_{c.}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn><mo>−</mo><mn>3</mn><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">7 - 3 = 4</annotation></semantics></math></td>
 </tr>
 <tr class="odd">
 <td align="left">time.pm-am</td>
 <td align="left">mean pm minus mean am</td>
-<td align="left"><span class="math inline">\(Y_{.p} -
-Y_{.a}\)</span></td>
-<td align="left"><span class="math inline">\(8 - 2 = 6\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>.</mi><mi>p</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>.</mi><mi>a</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{.p} - Y_{.a}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8</mn><mo>−</mo><mn>2</mn><mo>=</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">8 - 2 = 6</annotation></semantics></math></td>
 </tr>
 <tr class="even">
 <td align="left">pet.dog-cat:time.pm-am</td>
 <td align="left">dog minus cat when pm, minus dog minus cat when am</td>
-<td align="left"><span class="math inline">\((Y_{dp} - Y_{cp}) - (Y_{da}
-- Y_{ca})\)</span></td>
-<td align="left"><span class="math inline">\((10 - 6) - (4 - 0) =
-0\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi>d</mi><mi>p</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>p</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi>d</mi><mi>a</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>a</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(Y_{dp} - Y_{cp}) - (Y_{da} - Y_{ca})</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>10</mn><mo>−</mo><mn>6</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>4</mn><mo>−</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">(10 - 6) - (4 - 0) = 0</annotation></semantics></math></td>
 </tr>
 </tbody>
 </table>
@@ -3516,30 +3441,26 @@ pet.dog-cat:time.pm-am
 <tr class="odd">
 <td align="left">intercept</td>
 <td align="left">grand mean</td>
-<td align="left"><span class="math inline">\(Y_{..}\)</span></td>
-<td align="left"><span class="math inline">\(5\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Y</mi><mrow><mi>.</mi><mi>.</mi></mrow></msub><annotation encoding="application/x-tex">Y_{..}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>5</mn><annotation encoding="application/x-tex">5</annotation></semantics></math></td>
 </tr>
 <tr class="even">
 <td align="left">pet.dog-cat</td>
 <td align="left">mean dog minus mean cat</td>
-<td align="left"><span class="math inline">\(Y_{d.} -
-Y_{c.}\)</span></td>
-<td align="left"><span class="math inline">\(7 - 3 = 4\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>d</mi><mi>.</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>.</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{d.} - Y_{c.}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn><mo>−</mo><mn>3</mn><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">7 - 3 = 4</annotation></semantics></math></td>
 </tr>
 <tr class="odd">
 <td align="left">time.pm-am</td>
 <td align="left">mean pm minus mean am</td>
-<td align="left"><span class="math inline">\(Y_{.p} -
-Y_{.a}\)</span></td>
-<td align="left"><span class="math inline">\(8 - 2 = 6\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>.</mi><mi>p</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>.</mi><mi>a</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{.p} - Y_{.a}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8</mn><mo>−</mo><mn>2</mn><mo>=</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">8 - 2 = 6</annotation></semantics></math></td>
 </tr>
 <tr class="even">
 <td align="left">pet.dog-cat:time.pm-am</td>
 <td align="left">dog minus cat when pm, minus dog minus cat when am</td>
-<td align="left"><span class="math inline">\((Y_{dp} - Y_{cp}) - (Y_{da}
-- Y_{ca})\)</span></td>
-<td align="left"><span class="math inline">\((10 - 6) - (4 - 0) =
-0\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi>d</mi><mi>p</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>p</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi>d</mi><mi>a</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>a</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(Y_{dp} - Y_{cp}) - (Y_{da} - Y_{ca})</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>10</mn><mo>−</mo><mn>6</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>4</mn><mo>−</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">(10 - 6) - (4 - 0) = 0</annotation></semantics></math></td>
 </tr>
 </tbody>
 </table>
@@ -3688,24 +3609,24 @@ explore how to interpret interactions between a 2-level factor and a
 <tbody>
 <tr class="odd">
 <td><strong>am</strong></td>
-<td><span class="math inline">\(Y_{ca} = 0\)</span></td>
-<td><span class="math inline">\(Y_{da} = 5\)</span></td>
-<td><span class="math inline">\(Y_{fa} = 7\)</span></td>
-<td><span class="math inline">\(Y_{.a} = 4\)</span></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>c</mi><mi>a</mi></mrow></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">Y_{ca} = 0</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>d</mi><mi>a</mi></mrow></msub><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">Y_{da} = 5</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>f</mi><mi>a</mi></mrow></msub><mo>=</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">Y_{fa} = 7</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>.</mi><mi>a</mi></mrow></msub><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">Y_{.a} = 4</annotation></semantics></math></td>
 </tr>
 <tr class="even">
 <td><strong>pm</strong></td>
-<td><span class="math inline">\(Y_{cp} = 6\)</span></td>
-<td><span class="math inline">\(Y_{dp} = 2\)</span></td>
-<td><span class="math inline">\(Y_{fp} = 1\)</span></td>
-<td><span class="math inline">\(Y_{.p} = 3\)</span></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>c</mi><mi>p</mi></mrow></msub><mo>=</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">Y_{cp} = 6</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>d</mi><mi>p</mi></mrow></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">Y_{dp} = 2</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>f</mi><mi>p</mi></mrow></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">Y_{fp} = 1</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>.</mi><mi>p</mi></mrow></msub><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">Y_{.p} = 3</annotation></semantics></math></td>
 </tr>
 <tr class="odd">
 <td><strong>mean</strong></td>
-<td><span class="math inline">\(Y_{c.} = 3\)</span></td>
-<td><span class="math inline">\(Y_{d.} = 3.5\)</span></td>
-<td><span class="math inline">\(Y_{f.} = 4\)</span></td>
-<td><span class="math inline">\(Y_{..} = 3.5\)</span></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>c</mi><mi>.</mi></mrow></msub><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">Y_{c.} = 3</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>d</mi><mi>.</mi></mrow></msub><mo>=</mo><mn>3.5</mn></mrow><annotation encoding="application/x-tex">Y_{d.} = 3.5</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>f</mi><mi>.</mi></mrow></msub><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">Y_{f.} = 4</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>.</mi><mi>.</mi></mrow></msub><mo>=</mo><mn>3.5</mn></mrow><annotation encoding="application/x-tex">Y_{..} = 3.5</annotation></semantics></math></td>
 </tr>
 </tbody>
 </table>
@@ -3743,46 +3664,39 @@ explore how to interpret interactions between a 2-level factor and a
 <tr class="odd">
 <td align="left">intercept</td>
 <td align="left">cat when am</td>
-<td align="left"><span class="math inline">\(Y_{ca}\)</span></td>
-<td align="left"><span class="math inline">\(0\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Y</mi><mrow><mi>c</mi><mi>a</mi></mrow></msub><annotation encoding="application/x-tex">Y_{ca}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></td>
 </tr>
 <tr class="even">
 <td align="left">pet.dog-cat</td>
 <td align="left">dog minus cat, when am</td>
-<td align="left"><span class="math inline">\(Y_{da} -
-Y_{ca}\)</span></td>
-<td align="left"><span class="math inline">\(5 - 0 = 5\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>d</mi><mi>a</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>a</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{da} - Y_{ca}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn><mo>−</mo><mn>0</mn><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">5 - 0 = 5</annotation></semantics></math></td>
 </tr>
 <tr class="odd">
 <td align="left">pet.ferret-cat</td>
 <td align="left">ferret minus cat, when am</td>
-<td align="left"><span class="math inline">\(Y_{fa} -
-Y_{ca}\)</span></td>
-<td align="left"><span class="math inline">\(7 - 0 = 7\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>f</mi><mi>a</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>a</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{fa} - Y_{ca}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn><mo>−</mo><mn>0</mn><mo>=</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">7 - 0 = 7</annotation></semantics></math></td>
 </tr>
 <tr class="even">
 <td align="left">time.pm-am</td>
 <td align="left">pm minus am, for cats</td>
-<td align="left"><span class="math inline">\(Y_{cp} -
-Y_{ca}\)</span></td>
-<td align="left"><span class="math inline">\(6 - 0 = 6\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>c</mi><mi>p</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>a</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{cp} - Y_{ca}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6</mn><mo>−</mo><mn>0</mn><mo>=</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">6 - 0 = 6</annotation></semantics></math></td>
 </tr>
 <tr class="odd">
 <td align="left">pet.dog-cat:time.pm-am</td>
 <td align="left">dog minus cat when pm, minus dog minus cat when am</td>
-<td align="left"><span class="math inline">\((Y_{dp} - Y_{cp}) - (Y_{da}
-- Y_{ca})\)</span></td>
-<td align="left"><span class="math inline">\((2 - 6) - (5 - 0) =
--9\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi>d</mi><mi>p</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>p</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi>d</mi><mi>a</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>a</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(Y_{dp} - Y_{cp}) - (Y_{da} - Y_{ca})</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mo>−</mo><mn>6</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>5</mn><mo>−</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>−</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">(2 - 6) - (5 - 0) = -9</annotation></semantics></math></td>
 </tr>
 <tr class="even">
 <td align="left">pet.ferret-cat:time.pm-am</td>
 <td align="left">ferret minus cat when pm, minus ferret minus cat when
 am</td>
-<td align="left"><span class="math inline">\((Y_{fp} - Y_{cp}) - (Y_{fa}
-- Y_{ca})\)</span></td>
-<td align="left"><span class="math inline">\((1 - 6) - (7 - 0) =
--12\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi>f</mi><mi>p</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>p</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi>f</mi><mi>a</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>a</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(Y_{fp} - Y_{cp}) - (Y_{fa} - Y_{ca})</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mn>6</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>7</mn><mo>−</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>−</mo><mn>12</mn></mrow><annotation encoding="application/x-tex">(1 - 6) - (7 - 0) = -12</annotation></semantics></math></td>
 </tr>
 </tbody>
 </table>
@@ -3935,46 +3849,39 @@ pet.ferret-cat:time.pm-am
 <tr class="odd">
 <td align="left">intercept</td>
 <td align="left">grand mean</td>
-<td align="left"><span class="math inline">\(Y_{..}\)</span></td>
-<td align="left"><span class="math inline">\(3.5\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Y</mi><mrow><mi>.</mi><mi>.</mi></mrow></msub><annotation encoding="application/x-tex">Y_{..}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>3.5</mn><annotation encoding="application/x-tex">3.5</annotation></semantics></math></td>
 </tr>
 <tr class="even">
 <td align="left">pet.dog-cat</td>
 <td align="left">mean dog minus mean cat</td>
-<td align="left"><span class="math inline">\(Y_{d.} -
-Y_{c.}\)</span></td>
-<td align="left"><span class="math inline">\(3.5 - 3 = 0.5\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>d</mi><mi>.</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>.</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{d.} - Y_{c.}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3.5</mn><mo>−</mo><mn>3</mn><mo>=</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">3.5 - 3 = 0.5</annotation></semantics></math></td>
 </tr>
 <tr class="odd">
 <td align="left">pet.ferret-cat</td>
 <td align="left">mean ferret minus mean cat</td>
-<td align="left"><span class="math inline">\(Y_{f.} -
-Y_{c.}\)</span></td>
-<td align="left"><span class="math inline">\(4 - 3 = 1\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>f</mi><mi>.</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>.</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{f.} - Y_{c.}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mo>−</mo><mn>3</mn><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">4 - 3 = 1</annotation></semantics></math></td>
 </tr>
 <tr class="even">
 <td align="left">time.pm-am</td>
 <td align="left">mean pm minus mean am</td>
-<td align="left"><span class="math inline">\(Y_{.p} -
-Y_{.a}\)</span></td>
-<td align="left"><span class="math inline">\(3 - 4 = -1\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>.</mi><mi>p</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>.</mi><mi>a</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{.p} - Y_{.a}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>−</mo><mn>4</mn><mo>=</mo><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">3 - 4 = -1</annotation></semantics></math></td>
 </tr>
 <tr class="odd">
 <td align="left">pet.dog-cat:time.pm-am</td>
 <td align="left">dog minus cat when pm, minus dog minus cat when am</td>
-<td align="left"><span class="math inline">\((Y_{dp} - Y_{cp}) - (Y_{da}
-- Y_{ca})\)</span></td>
-<td align="left"><span class="math inline">\((2 - 6) - (5 - 0) =
--9\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi>d</mi><mi>p</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>p</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi>d</mi><mi>a</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>a</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(Y_{dp} - Y_{cp}) - (Y_{da} - Y_{ca})</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mo>−</mo><mn>6</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>5</mn><mo>−</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>−</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">(2 - 6) - (5 - 0) = -9</annotation></semantics></math></td>
 </tr>
 <tr class="even">
 <td align="left">pet.ferret-cat:time.pm-am</td>
 <td align="left">ferret minus cat when pm, minus ferret minus cat when
 am</td>
-<td align="left"><span class="math inline">\((Y_{fp} - Y_{cp}) - (Y_{fa}
-- Y_{ca})\)</span></td>
-<td align="left"><span class="math inline">\((1 - 6) - (7 - 0) =
--12\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi>f</mi><mi>p</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>p</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi>f</mi><mi>a</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>a</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(Y_{fp} - Y_{cp}) - (Y_{fa} - Y_{ca})</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mn>6</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>7</mn><mo>−</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>−</mo><mn>12</mn></mrow><annotation encoding="application/x-tex">(1 - 6) - (7 - 0) = -12</annotation></semantics></math></td>
 </tr>
 </tbody>
 </table>
@@ -4127,48 +4034,40 @@ pet.ferret-cat:time.pm-am
 <tr class="odd">
 <td align="left">intercept</td>
 <td align="left">grand mean</td>
-<td align="left"><span class="math inline">\(Y_{..}\)</span></td>
-<td align="left"><span class="math inline">\(3\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Y</mi><mrow><mi>.</mi><mi>.</mi></mrow></msub><annotation encoding="application/x-tex">Y_{..}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>3</mn><annotation encoding="application/x-tex">3</annotation></semantics></math></td>
 </tr>
 <tr class="even">
 <td align="left">pet.cat-intercept</td>
 <td align="left">mean cat minus grand mean</td>
-<td align="left"><span class="math inline">\(Y_{c.} -
-Y_{..}\)</span></td>
-<td align="left"><span class="math inline">\(3 - 3.5 =
--0.5\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>c</mi><mi>.</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>.</mi><mi>.</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{c.} - Y_{..}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>−</mo><mn>3.5</mn><mo>=</mo><mo>−</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">3 - 3.5 = -0.5</annotation></semantics></math></td>
 </tr>
 <tr class="odd">
 <td align="left">pet.dog-intercept</td>
 <td align="left">mean dog minus grand mean</td>
-<td align="left"><span class="math inline">\(Y_{d.} -
-Y_{..}\)</span></td>
-<td align="left"><span class="math inline">\(3.5 - 3.5 = 0\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>d</mi><mi>.</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>.</mi><mi>.</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{d.} - Y_{..}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3.5</mn><mo>−</mo><mn>3.5</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">3.5 - 3.5 = 0</annotation></semantics></math></td>
 </tr>
 <tr class="even">
 <td align="left">time.am-intercept</td>
 <td align="left">mean am minus grand mean</td>
-<td align="left"><span class="math inline">\(Y_{.a} -
-Y_{..}\)</span></td>
-<td align="left"><span class="math inline">\(4 - 3.5 = 0.5\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>.</mi><mi>a</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>.</mi><mi>.</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{.a} - Y_{..}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mo>−</mo><mn>3.5</mn><mo>=</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">4 - 3.5 = 0.5</annotation></semantics></math></td>
 </tr>
 <tr class="odd">
 <td align="left">pet.cat-intercept:time.am-intercept</td>
 <td align="left">cat minus mean when am, minus cat minus mean when pm,
 divided by 2</td>
-<td align="left"><span class="math inline">\(\frac{(Y_{ca} - Y_{.a}) -
-(Y_{cp} - Y_{.p})}{2}\)</span></td>
-<td align="left"><span class="math inline">\(\frac{(0 - 4) - (6 - 3)}{2}
-= -3.5\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>a</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>.</mi><mi>a</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>p</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>.</mi><mi>p</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mn>2</mn></mfrac><annotation encoding="application/x-tex">\frac{(Y_{ca} - Y_{.a}) - (Y_{cp} - Y_{.p})}{2}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>−</mo><mn>4</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>6</mn><mo>−</mo><mn>3</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mn>2</mn></mfrac><mo>=</mo><mo>−</mo><mn>3.5</mn></mrow><annotation encoding="application/x-tex">\frac{(0 - 4) - (6 - 3)}{2} = -3.5</annotation></semantics></math></td>
 </tr>
 <tr class="even">
 <td align="left">pet.dog-intercept:time.am-intercept</td>
 <td align="left">dog minus mean when am, minus dog minus mean when pm,
 divided by 2</td>
-<td align="left"><span class="math inline">\(\frac{(Y_{da} - Y_{.a}) -
-(Y_{dp} - Y_{.p})}{2}\)</span></td>
-<td align="left"><span class="math inline">\(\frac{(5 - 4) - (2 - 3)}{2}
-= 1\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi>d</mi><mi>a</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>.</mi><mi>a</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi>d</mi><mi>p</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>.</mi><mi>p</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mn>2</mn></mfrac><annotation encoding="application/x-tex">\frac{(Y_{da} - Y_{.a}) - (Y_{dp} - Y_{.p})}{2}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>5</mn><mo>−</mo><mn>4</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mo>−</mo><mn>3</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mn>2</mn></mfrac><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\frac{(5 - 4) - (2 - 3)}{2} = 1</annotation></semantics></math></td>
 </tr>
 </tbody>
 </table>
@@ -4321,46 +4220,39 @@ pet.dog-intercept:time.am-intercept
 <tr class="odd">
 <td align="left">intercept</td>
 <td align="left">grand mean</td>
-<td align="left"><span class="math inline">\(Y_{..}\)</span></td>
-<td align="left"><span class="math inline">\(3.5\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Y</mi><mrow><mi>.</mi><mi>.</mi></mrow></msub><annotation encoding="application/x-tex">Y_{..}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>3.5</mn><annotation encoding="application/x-tex">3.5</annotation></semantics></math></td>
 </tr>
 <tr class="even">
 <td align="left">pet.dog-cat</td>
 <td align="left">mean dog minus mean cat</td>
-<td align="left"><span class="math inline">\(Y_{d.} -
-Y_{c.}\)</span></td>
-<td align="left"><span class="math inline">\(3.5 - 3 = 0.5\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>d</mi><mi>.</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>.</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{d.} - Y_{c.}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3.5</mn><mo>−</mo><mn>3</mn><mo>=</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">3.5 - 3 = 0.5</annotation></semantics></math></td>
 </tr>
 <tr class="odd">
 <td align="left">pet.ferret-dog</td>
 <td align="left">mean ferret minus mean dog</td>
-<td align="left"><span class="math inline">\(Y_{f.} -
-Y_{d.}\)</span></td>
-<td align="left"><span class="math inline">\(4 - 3.5 = 0.5\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>f</mi><mi>.</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>d</mi><mi>.</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{f.} - Y_{d.}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mo>−</mo><mn>3.5</mn><mo>=</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">4 - 3.5 = 0.5</annotation></semantics></math></td>
 </tr>
 <tr class="even">
 <td align="left">time.pm-am</td>
 <td align="left">mean pm minus mean am</td>
-<td align="left"><span class="math inline">\(Y_{.p} -
-Y_{.a}\)</span></td>
-<td align="left"><span class="math inline">\(3 - 4 = -1\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>.</mi><mi>p</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>.</mi><mi>a</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{.p} - Y_{.a}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>−</mo><mn>4</mn><mo>=</mo><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">3 - 4 = -1</annotation></semantics></math></td>
 </tr>
 <tr class="odd">
 <td align="left">pet.dog-cat:time.pm-am</td>
 <td align="left">dog minus cat when pm, minus dog minus cat when am</td>
-<td align="left"><span class="math inline">\((Y_{dp} - Y_{cp}) - (Y_{da}
-- Y_{ca})\)</span></td>
-<td align="left"><span class="math inline">\((2 - 6) - (5 - 0) =
--9\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi>d</mi><mi>p</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>p</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi>d</mi><mi>a</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>a</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(Y_{dp} - Y_{cp}) - (Y_{da} - Y_{ca})</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mo>−</mo><mn>6</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>5</mn><mo>−</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>−</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">(2 - 6) - (5 - 0) = -9</annotation></semantics></math></td>
 </tr>
 <tr class="even">
 <td align="left">pet.ferret-dog:time.pm-am</td>
 <td align="left">ferret minus dog when pm, minus ferret minus dog when
 am</td>
-<td align="left"><span class="math inline">\((Y_{fp} - Y_{dp}) - (Y_{fa}
-- Y_{da})\)</span></td>
-<td align="left"><span class="math inline">\((1 - 2) - (7 - 5) =
--3\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi>f</mi><mi>p</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>d</mi><mi>p</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi>f</mi><mi>a</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>d</mi><mi>a</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(Y_{fp} - Y_{dp}) - (Y_{fa} - Y_{da})</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>7</mn><mo>−</mo><mn>5</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>−</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">(1 - 2) - (7 - 5) = -3</annotation></semantics></math></td>
 </tr>
 </tbody>
 </table>
@@ -4513,47 +4405,39 @@ pet.ferret-dog:time.pm-am
 <tr class="odd">
 <td align="left">intercept</td>
 <td align="left">grand mean</td>
-<td align="left"><span class="math inline">\(Y_{..}\)</span></td>
-<td align="left"><span class="math inline">\(3.5\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Y</mi><mrow><mi>.</mi><mi>.</mi></mrow></msub><annotation encoding="application/x-tex">Y_{..}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>3.5</mn><annotation encoding="application/x-tex">3.5</annotation></semantics></math></td>
 </tr>
 <tr class="even">
 <td align="left">pet.dog-cat</td>
 <td align="left">mean dog minus mean cat</td>
-<td align="left"><span class="math inline">\(Y_{d.} -
-Y_{c.}\)</span></td>
-<td align="left"><span class="math inline">\(3.5 - 3 = 0.5\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>d</mi><mi>.</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>.</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{d.} - Y_{c.}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3.5</mn><mo>−</mo><mn>3</mn><mo>=</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">3.5 - 3 = 0.5</annotation></semantics></math></td>
 </tr>
 <tr class="odd">
 <td align="left">pet.ferret-cat.dog</td>
 <td align="left">mean ferret minus mean of cat and dog</td>
-<td align="left"><span class="math inline">\(Y_{f.} - \frac{Y_{c.} +
-Y_{d.}}{2}\)</span></td>
-<td align="left"><span class="math inline">\(4 - \frac{3 + 3.5}{2} =
-0.75\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>f</mi><mi>.</mi></mrow></msub><mo>−</mo><mfrac><mrow><msub><mi>Y</mi><mrow><mi>c</mi><mi>.</mi></mrow></msub><mo>+</mo><msub><mi>Y</mi><mrow><mi>d</mi><mi>.</mi></mrow></msub></mrow><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">Y_{f.} - \frac{Y_{c.} + Y_{d.}}{2}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mo>−</mo><mfrac><mrow><mn>3</mn><mo>+</mo><mn>3.5</mn></mrow><mn>2</mn></mfrac><mo>=</mo><mn>0.75</mn></mrow><annotation encoding="application/x-tex">4 - \frac{3 + 3.5}{2} = 0.75</annotation></semantics></math></td>
 </tr>
 <tr class="even">
 <td align="left">time.pm-am</td>
 <td align="left">mean pm minus mean am</td>
-<td align="left"><span class="math inline">\(Y_{.p} -
-Y_{.a}\)</span></td>
-<td align="left"><span class="math inline">\(3 - 4 = -1\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>.</mi><mi>p</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>.</mi><mi>a</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{.p} - Y_{.a}</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>−</mo><mn>4</mn><mo>=</mo><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">3 - 4 = -1</annotation></semantics></math></td>
 </tr>
 <tr class="odd">
 <td align="left">pet.dog-cat:time.pm-am</td>
 <td align="left">dog minus cat when pm, minus dog minus cat when am</td>
-<td align="left"><span class="math inline">\((Y_{dp} - Y_{cp}) - (Y_{da}
-- Y_{ca})\)</span></td>
-<td align="left"><span class="math inline">\((2 - 6) - (5 - 0) =
--9\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi>d</mi><mi>p</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>p</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi>d</mi><mi>a</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>c</mi><mi>a</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(Y_{dp} - Y_{cp}) - (Y_{da} - Y_{ca})</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mo>−</mo><mn>6</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>5</mn><mo>−</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>−</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">(2 - 6) - (5 - 0) = -9</annotation></semantics></math></td>
 </tr>
 <tr class="even">
 <td align="left">pet.ferret-cat.dog:time.pm-am</td>
 <td align="left">ferret minus mean of cat and dog when pm, minus ferret
 minus mean of cat and dog when am</td>
-<td align="left"><span class="math inline">\((Y_{fp} - \frac{Y_{cp} +
-Y_{dp}}{2}) - (Y_{fa} - \frac{Y_{ca} + Y_{da}}{2})\)</span></td>
-<td align="left"><span class="math inline">\((1 - \frac{6 + 2}{2}) - (7
-- \frac{0 + 5}{2}) = -7.5\)</span></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi>f</mi><mi>p</mi></mrow></msub><mo>−</mo><mfrac><mrow><msub><mi>Y</mi><mrow><mi>c</mi><mi>p</mi></mrow></msub><mo>+</mo><msub><mi>Y</mi><mrow><mi>d</mi><mi>p</mi></mrow></msub></mrow><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi>f</mi><mi>a</mi></mrow></msub><mo>−</mo><mfrac><mrow><msub><mi>Y</mi><mrow><mi>c</mi><mi>a</mi></mrow></msub><mo>+</mo><msub><mi>Y</mi><mrow><mi>d</mi><mi>a</mi></mrow></msub></mrow><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(Y_{fp} - \frac{Y_{cp} + Y_{dp}}{2}) - (Y_{fa} - \frac{Y_{ca} + Y_{da}}{2})</annotation></semantics></math></td>
+<td align="left"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mfrac><mrow><mn>6</mn><mo>+</mo><mn>2</mn></mrow><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>7</mn><mo>−</mo><mfrac><mrow><mn>0</mn><mo>+</mo><mn>5</mn></mrow><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>−</mo><mn>7.5</mn></mrow><annotation encoding="application/x-tex">(1 - \frac{6 + 2}{2}) - (7 - \frac{0 + 5}{2}) = -7.5</annotation></semantics></math></td>
 </tr>
 </tbody>
 </table>
@@ -4702,28 +4586,26 @@ of ferret versus cat.</strong></p>
 <p>Please just don’t. You’re going to break my head.</p>
 </div>
 </div>
-  </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
+  </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
 </div>
 
 
 
     <footer><div class="pkgdown-footer-left">
-  <p></p>
-<p>Developed by Lisa DeBruine.</p>
+  <p>Developed by Lisa DeBruine.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
 </div>
 
     </footer>
 </div>
 
-  
 
-  
+
+
 
   </body>
 </html>

@@ -1,20 +1,19 @@
-pandoc: 2.19.2
-pkgdown: 2.0.7
+pandoc: 3.1.11
+pkgdown: 2.1.3
 pkgdown_sha: ~
 articles:
-  codebook: codebook.html
-  continuous: continuous.html
-  contrasts: contrasts.html
-  distributions: distributions.html
-  norta: norta.html
+  articles/codebook: codebook.html
+  articles/continuous: continuous.html
+  articles/contrasts: contrasts.html
+  articles/distributions: distributions.html
+  articles/norta: norta.html
   plots: plots.html
-  random_reports: random_reports.html
-  rnorm_multi: rnorm_multi.html
+  articles/random_reports: random_reports.html
+  articles/rnorm_multi: rnorm_multi.html
   sim_design: sim_design.html
-  sim_df: sim_df.html
-  sim_mixed: sim_mixed.html
-last_built: 2023-09-24T16:35Z
+  articles/sim_df: sim_df.html
+  articles/sim_mixed: sim_mixed.html
+last_built: 2025-10-17T11:23Z
 urls:
-  reference: https://debruine.github.io/faux/reference
-  article: https://debruine.github.io/faux/articles
-
+  reference: https://scienceverse.github.io/faux/reference
+  article: https://scienceverse.github.io/faux/articles
