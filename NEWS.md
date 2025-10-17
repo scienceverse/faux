@@ -1,3 +1,5 @@
+# faux (development version)
+
 # faux 1.2.3 (2025-09-25)
 
 * Fixed failing tests due to ggplot2 4.0 ggplot object structure changes
