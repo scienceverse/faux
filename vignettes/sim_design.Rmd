@@ -329,7 +329,7 @@ df <- sim_design(within, between, n = 100,
                  empirical = TRUE)
 ```
 
-`r get_params(df, between = "pet") %>% knitr::kable()`
+`r sample_params(df, between = "pet") %>% knitr::kable()`
 
 ## More factors
 

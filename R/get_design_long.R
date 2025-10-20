@@ -55,7 +55,7 @@ get_design_long <- function(data,
   cells_b <- cell_combos(between, names(dv)) 
   
   # get n, mu, sd, r per cell
-  chk <- get_params(data, between_factors, within_factors, 
+  chk <- sample_params(data, between_factors, within_factors, 
                     names(dv), names(id), digits = 8)
   
   if (length(between_factors)) {
@@ -72,24 +72,25 @@ get_design_long <- function(data,
   }
   
   get_stat <- function(stat) {
-    x <- as.data.frame(chk_b[, c(".between", "var", stat)])
-    y <- stats::reshape(x, timevar = "var", 
-                        idvar = ".between", 
-                        direction = "wide")
-    rownames(y) <- y$`.between`
-    y$`.between` <- NULL
-    names(y) <- gsub(paste0(stat, "\\."), "", names(y))
-    y <- y[, order(cells_w)] # FIX: check if needed?
-    y
+    x <- as.data.frame(chk_b[, c(".between", within_factors, stat)])
+    # y <- stats::reshape(x, timevar = within_factors, 
+    #                     idvar = ".between", 
+    #                     direction = "wide")
+    # rownames(y) <- y$`.between`
+    # y$`.between` <- NULL
+    # names(y) <- gsub(paste0(stat, "\\."), "", names(y))
+    # y <- y[, order(cells_w)] # FIX: check if needed?
+    # y
+    x[[stat]]
   }
   
   n <- get_stat("n")
   sd <- get_stat("sd")
   mu <- get_stat("mean")
   
-  x <- chk_b[, c(".between", "var", cells_w)] %>% as.data.frame()
+  x <- chk_b[, c(".between", within_factors, cells_w)] %>% as.data.frame()
   r <- by(x, x$`.between`, function(y) {
-    rownames(y) <- y$var
+    rownames(y) <- cells_w
     y <- y[cells_w, cells_w]
     as.matrix(y)
   })

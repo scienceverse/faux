@@ -47,7 +47,7 @@ By default, it returns a data frame with 100 rows of two normally distributed va
 ```{r}
 dat <- rmulti()
 
-get_params(dat)
+sample_params(dat)
 ```
 
 The `n`, `r`, `empirical` and `as.matrix` arguments work the same as the do for `rnorm_multi()`.
@@ -57,7 +57,7 @@ dat <- rmulti(n = 200, r = 0.5,
               empirical = TRUE, 
               as.matrix = FALSE)
 
-get_params(dat)
+sample_params(dat)
 ```
 
 ### Distributions and parameters
@@ -74,7 +74,7 @@ dat <- rmulti(n = 1000,
                             poisson_var = c(lambda = 3)),
               r = 0.5)
 
-get_params(dat)
+sample_params(dat)
 ```
 
 ```{r, echo = FALSE, fig.width = 10, fig.height = 10}
@@ -106,7 +106,7 @@ dat <- rmulti(
 
 # convert likert-scale variable to integer
 dat$L <- as.integer(dat$L)
-get_params(dat)
+sample_params(dat)
 ```
 
 
@@ -209,7 +209,7 @@ dat$B2 = norm2binom(dat$N2,
                     mu = 0, sd = 1)
 
 # check
-get_params(dat)
+sample_params(dat)
 ```
 
 Note that the correlation between T1 and B2 is unlikely to be **exactly** 0.75 unless the n is very large, especially for distributions that have very few unique values.

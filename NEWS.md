@@ -1,6 +1,18 @@
 # faux (development version)
 
+
+## Name Changes
+
+* `get_params()` changed to `sample_params()` 
+
+## New Features
+
 * Data frames created with `sim_design()` now have column labels that can be used by ggplot2 4.0 for figure labels.
+* `sim_params()` added to get simulations parameters
+
+## Semi-Breaking Changes
+
+* `sample_params()` now returns within-subject factors as separate columns, instead of bundled as one column called "var", and "n" is just before "mean" tpo make the structure more similar to `sim_params()` and `get_design()$params`
 
 # faux 1.2.3 (2025-09-25)
 
@@ -69,7 +81,7 @@
 
 ## Minor improvements and fixes
 
-* `get_params()` doesn't need between, within, id, and dv set for date created by `sim_design()`
+* `sample_params()` doesn't need between, within, id, and dv set for date created by `sim_design()`
 * `plot_design()` can display a subset of factors
 * `sim_design()` fixed a bug in when setting n with an unnamed vector and within-subjects factors
 
@@ -112,7 +124,7 @@
 * added new mixed effect builder functions
 * updated mixed effects vignette
 * anonymous within and between factors in `sim_design()` are now named W and B or W1, W2, W3, ..., B1, B2, ... instead of A, B, C, ... (and fixed relevant tests and vignette code)
-* fixed `get_params()` so it doesn't need between, within, id, and dv set for date created by `sim_design()`
+* fixed `sample_params()` so it doesn't need between, within, id, and dv set for date created by `sim_design()`
 
 # faux 1.0.0 (2021-03-27)
 
@@ -144,8 +156,8 @@
 
 # faux 0.0.1.61 (2021-02-06)
 
-* `get_params()` doesn't require within and between set for data made with faux (that has a "design" attribute)
-* fixed bug in `get_params()` where the var column was alphabetised, but the corresponding columns for the correlation table were in factor order
+* `sample_params()` doesn't require within and between set for data made with faux (that has a "design" attribute)
+* fixed bug in `sample_params()` where the var column was alphabetised, but the corresponding columns for the correlation table were in factor order
 * several new distribution conversion functions and a vignette
 * this version isn't on CRAN yet
 
@@ -199,7 +211,7 @@
 # faux 0.0.0.9017 (2019-12-26)
 
 * Added `rep` argument to `sim_design()` and `sim_data()`. If rep > 1, returns a nested data frame with `rep` simulated datasets.
-* Fixed warnings on `get_params()`
+* Fixed warnings on `sample_params()`
 * Improved `make_id()` function
 
 # faux 0.0.0.9016 (2019-12-10)

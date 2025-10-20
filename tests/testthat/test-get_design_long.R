@@ -22,13 +22,13 @@ test_that("2w", {
 
 # get_design_long ----
 test_that("get_design_long", {
-  design <- check_design(2, 2, n = 10, mu = 5, sd = 2, r = 0.5)
+  design <- check_design(2, 2, n = c(10, 20), mu = 1:4, sd = 4:1, r = 0.5)
   df_long <- sim_design(design = design, long = TRUE, empirical = TRUE)
   d <- get_design_long(df_long)
   
-  n <- list(B1a = 10, B1b = 10)
-  mu <- list(B1a = list(W1a = 5, W1b = 5), B1b = list(W1a = 5, W1b = 5))
-  sd <- list(B1a = list(W1a = 2, W1b = 2), B1b = list(W1a = 2, W1b = 2))
+  n <- list(B1a = 10, B1b = 20)
+  mu <- list(B1a = list(W1a = 1, W1b = 2), B1b = list(W1a = 3, W1b = 4))
+  sd <- list(B1a = list(W1a = 4, W1b = 3), B1b = list(W1a = 2, W1b = 1))
   r <- data.frame(W1a = c(1, .5), W1b = c(.5, 1), row.names = c("W1a", "W1b")) %>% as.matrix()
   
   expect_equal(d$within, list(W1 = list(W1a="W1a", W1b="W1b")))
@@ -39,9 +39,9 @@ test_that("get_design_long", {
   expect_equal(d$r$B1a, r)
   expect_equal(d$r$B1b, r)
   
-  df_long <- sim_design(c(2, 2, 2), c(2, 2, 2), long = TRUE, 
+  data <- sim_design(c(2, 2, 2), c(2, 2, 2), long = TRUE, 
                         empirical = TRUE)
-  d <- get_design_long(df_long)
+  d <- get_design_long(data)
   
   expect_equal(d$mu[[1]] %>% names(), 
                c("W1a_W2a_W3a", "W1a_W2a_W3b", "W1a_W2b_W3a", "W1a_W2b_W3b", 

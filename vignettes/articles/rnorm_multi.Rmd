@@ -45,7 +45,7 @@ dat <- rnorm_multi(n = 100,
 ```
 
 
-`r get_params(dat) %>% knitr::kable()`
+`r sample_params(dat) %>% knitr::kable()`
 Table: Sample stats
 
 ### Specify correlations {#spec_r}
@@ -65,7 +65,7 @@ If you want all the pairs to have the same correlation, just specify a single nu
 bvn <- rnorm_multi(100, 5, 0, 1, .3, varnames = letters[1:5])
 ```
 
-`r get_params(bvn) %>% knitr::kable()`
+`r sample_params(bvn) %>% knitr::kable()`
 Table: Sample stats from a single rho
 
 #### Matrix
@@ -78,7 +78,7 @@ bvn <- rnorm_multi(100, 4, 0, 1, cmat,
                   varnames = colnames(cmat))
 ```
 
-`r get_params(bvn) %>% knitr::kable()`
+`r sample_params(bvn) %>% knitr::kable()`
 Table: Sample stats from a correlation matrix
 
 #### Vector (vars\*vars)
@@ -93,7 +93,7 @@ bvn <- rnorm_multi(100, 3, 0, 1, cmat,
                   varnames = c("first", "second", "third"))
 ```
 
-`r get_params(bvn) %>% knitr::kable()`
+`r sample_params(bvn) %>% knitr::kable()`
 Table: Sample stats from a vars\*vars vector
 
 #### Vector (vars\*(vars-1)/2)
@@ -112,7 +112,7 @@ bvn <- rnorm_multi(100, 4, 0, 1, cmat,
                   varnames = letters[1:4])
 ```
 
-`r get_params(bvn) %>% knitr::kable()`
+`r sample_params(bvn) %>% knitr::kable()`
 Table: Sample stats from a (vars\*(vars-1)/2) vector
 
 ### empirical
@@ -125,7 +125,7 @@ bvn <- rnorm_multi(100, 5, 0, 1, .3,
                   empirical = T)
 ```
 
-`r get_params(bvn) %>% knitr::kable()`
+`r sample_params(bvn) %>% knitr::kable()`
 Table: Sample stats with empirical = TRUE
 
 ## Pre-existing variables
@@ -138,7 +138,7 @@ dat <- rnorm_multi(varnames = "A") %>%
 ```
 
 ```{r, echo = FALSE, results='asis'}
-get_params(dat) %>% knitr::kable(digits = 3)
+sample_params(dat) %>% knitr::kable(digits = 3)
 ```
 
 Set `empirical = TRUE` to return a vector with the **exact** specified parameters.
@@ -148,7 +148,7 @@ dat$C <- rnorm_pre(dat$A, mu = 10, sd = 2, r = 0.5, empirical = TRUE)
 ```
 
 ```{r, echo = FALSE, results='asis'}
-get_params(dat) %>% knitr::kable(digits = 3)
+sample_params(dat) %>% knitr::kable(digits = 3)
 ```
 
 
@@ -159,7 +159,7 @@ dat$D <- rnorm_pre(dat, r = c(.1, .2, .3), empirical = TRUE)
 ```
 
 ```{r, echo = FALSE, results='asis'}
-get_params(dat) %>% knitr::kable(digits = 3)
+sample_params(dat) %>% knitr::kable(digits = 3)
 ```
 
 Not all correlation patterns are possible, so you'll get an error message if the correlations you ask for are impossible.

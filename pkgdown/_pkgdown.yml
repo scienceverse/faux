@@ -12,11 +12,7 @@ template:
   opengraph:
     image:
       src: man/figures/card.png
-      alt: "Rainbow hexagon with the word FAUX"
-    twitter:
-      creator: "@lisadebruine"
-      site: "@lisadebruine"
-      card: summary_large_image
+      alt: "Hexagon with the word FAUX"
       
 articles:
 - title: Demos
@@ -68,7 +64,8 @@ reference:
   desc: ~
   contents:
   - '`codebook`'
-  - '`get_params`'
+  - '`sample_params`'
+  - '`sim_params`'
   - '`json_design`'
   - '`make_id`'
   - '`messy`'

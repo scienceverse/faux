@@ -120,7 +120,7 @@ perf_dat_2 <- rnorm_multi(
   empirical = TRUE
 )
 
-get_params(perf_dat_1); get_params(perf_dat_2)
+sample_params(perf_dat_1); sample_params(perf_dat_2)
 ```
 
 ## nbinom

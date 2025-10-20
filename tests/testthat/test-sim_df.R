@@ -119,11 +119,11 @@ test_that("within", {
 #   simiris <- purrr::map_df(1:1000, function(i) {
 #     iris %>%
 #       sim_df(100) %>%
-#       check_sim_stats(digits = 10)
+#       sample_params(digits = 10)
 #   })
 #   
 #   orig_stats <- iris %>%
-#     check_sim_stats(digits = 10) %>%
+#     sample_params(digits = 10) %>%
 #     dplyr::arrange(var) %>%
 #     as.data.frame()
 #   

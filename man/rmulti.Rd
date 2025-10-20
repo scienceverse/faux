@@ -40,5 +40,5 @@ params <- list(A = list(mean = 100, sd = 10),
                B = list(lambda = 5),
                C = list(size = 10, prob = 0.5))
 x <- rmulti(100, dist, params, c(0.2, 0.4, 0.6), empirical = TRUE)
-get_params(x)
+sample_params(x)
 }

@@ -64,10 +64,10 @@ test_that("iris", {
   expect_equal(names(iris_wide), inames)
   expect_equal(nrow(iris_wide), 150)
   
-  long <- check_sim_stats(iris_long, within = c("Feature", "Measure"), 
+  long <- sample_params(iris_long, within = c("Feature", "Measure"), 
                           between = "Species", dv = "y", id = "id")
   
-  wide <- check_sim_stats(iris, between = "Species")
+  wide <- sample_params(iris, between = "Species")
   
   
   expect_equal(nrow(long), nrow(wide))

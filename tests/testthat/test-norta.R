@@ -349,7 +349,7 @@ test_that("rmulti 5", {
     r = r,
     empirical = TRUE
   )
-  p <- get_params(data)
+  p <- sample_params(data)
   
   expect_equal(p$A, c(1.0, 0.1, .2, .3, .4))
   expect_equal(p$B, c(.1, 1.0, .5, .6, .7))
@@ -376,7 +376,7 @@ test_that("rmulti r", {
     r = r,
     empirical = TRUE
   )
-  p <- get_params(data)
+  p <- sample_params(data)
   
   expect_equal(p$Z, c(1, 0, .1, .2))
   expect_equal(p$Y, c(0, 1, .3, .4))

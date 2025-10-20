@@ -72,13 +72,13 @@ test_that("2w", {
   
   df <- sim_design(within, between, mu = mu, sd = sd, 
                    r = r, dv = dv, id = id, empirical = TRUE)
-  chk <- check_sim_stats(df)
+  chk <- sample_params(df)
   
   comp <- data.frame(
-    n = c(100, 100),
-    var = factor(c("W1", "W2")),
+    W = factor(c("W1", "W2")),
     W1 = c(1.0, 0.3),
     W2 = c(0.3, 1.0),
+    n = c(100, 100),
     mean = c(1, 2),
     sd = c(1, 2)
   )
@@ -106,15 +106,16 @@ test_that("2w*2w", {
   between <- list()
   
   df <- sim_design(within, between, empirical = TRUE)
-  chk <- check_sim_stats(df)
+  chk <- sample_params(df)
 
   comp <- data.frame(
-    n = rep(100, 4),
-    var = factor(c("W1_X1", "W1_X2", "W2_X1", "W2_X2")),
+    W = (c("W1", "W1", "W2", "W2")),
+    X = (c("X1", "X2", "X1", "X2")),
     W1_X1 = c(1, 0, 0, 0),
     W1_X2 = c(0, 1, 0, 0),
     W2_X1 = c(0, 0, 1, 0),
     W2_X2 = c(0, 0, 0, 1),
+    n = rep(100, 4),
     mean = rep(0, 4),
     sd = rep(1, 4)
   )
@@ -135,7 +136,7 @@ test_that("2b", {
   
   df <- sim_design(within, between, n = 100, mu = mu, 
                    empirical = TRUE)
-  chk <- get_params(df, between = "B")
+  chk <- sample_params(df, between = "B")
   
   comp <- data.frame(
     B = factor(c("B1","B2")),
@@ -160,7 +161,7 @@ test_that("2b*2b", {
   
   df <- sim_design(within, between, n = 100, mu = 1:4,
                    empirical = TRUE)
-  chk <- check_sim_stats(df, between = c("A","B"))
+  chk <- sample_params(df, between = c("A","B"))
   
   comp <- data.frame(
     A = factor(c("A1", "A1", "A2", "A2"), 
@@ -205,14 +206,14 @@ test_that("2w*2b basic", {
   )
   
   df <- sim_design(within, between, n, mu, sd, r, TRUE)
-  chk <- check_sim_stats(df, between = "B")
+  chk <- sample_params(df, between = "B")
   
   comp <- data.frame(
     B = factor(c("B1", "B1", "B2", "B2"), c("B1", "B2")),
-    n = c(60, 60, 40, 40),
-    var = factor(c("W1", "W2", "W1", "W2")),
+    W = factor(c("W1", "W2", "W1", "W2")),
     W1 = c(1, .2, 1, .5),
     W2 = c(.2, 1, .5, 1),
+    n = c(60, 60, 40, 40),
     mean = c(10, 20, 10, 30),
     sd = 3:6
   )
@@ -250,14 +251,14 @@ test_that("2w*2b alt", {
   )
   
   df <- sim_design(within, between, n, mu, sd, r, TRUE)
-  chk <- check_sim_stats(df, between = "B")
+  chk <- sample_params(df, between = "B")
   
   comp <- data.frame(
     B = factor(c("B1", "B1", "B2", "B2"), c("B1", "B2")),
-    n = c(60, 60, 40, 40),
-    var = factor(c("W1", "W2", "W1", "W2")),
+    W = factor(c("W1", "W2", "W1", "W2")),
     W1 = c(1, .2, 1, .5),
     W2 = c(.2, 1, .5, 1),
+    n = c(60, 60, 40, 40),
     mean = c(10, 20, 10, 30),
     sd = 3:6
   )
@@ -289,13 +290,13 @@ test_that("2w*2b within order", {
   )
   
   df <- sim_design(within, between, 50, mu, sd, .5, TRUE)
-  chk <- check_sim_stats(df, between = "B")
+  chk <- sample_params(df, between = "B")
   comp <- data.frame(
     B = factor(c("B1", "B1", "B2", "B2"), c("B1", "B2")),
-    n = rep(50, 4),
-    var = factor(c("W1", "W2", "W1", "W2")),
+    W = factor(c("W1", "W2", "W1", "W2")),
     W1 = c(1, .5, 1, .5),
     W2 = c(.5, 1, .5, 1),
+    n = rep(50, 4),
     mean = c(10, 20, 10, 30),
     sd = 3:6
   )
@@ -336,13 +337,13 @@ test_that("2w*2b order", {
   )
   
   df <- sim_design(within, between, n, mu, sd, r, TRUE)
-  chk <- check_sim_stats(df, between = "B")
+  chk <- sample_params(df, between = "B")
   comp <- data.frame(
     B = factor(c("B1", "B1", "B2", "B2"), c("B1", "B2")),
-    n = c(60, 60, 40, 40),
-    var = factor(c("W1", "W2", "W1", "W2")),
+    W = factor(c("W1", "W2", "W1", "W2")),
     W1 = c(1, .2, 1, .5),
     W2 = c(.2, 1, .5, 1),
+    n = c(60, 60, 40, 40),
     mean = c(10, 20, 10, 30),
     sd = 3:6
   )
@@ -388,7 +389,7 @@ test_that("2w*2b*2b", {
   )
   
   df <- sim_design(within, between, n, mu, sd, r, TRUE)
-  check_sim_stats(df, between = c("A", "B"))
+  sample_params(df, between = c("A", "B"))
   
   expect_equal(nrow(df), 200)
   expect_equal(ncol(df), 5)
@@ -490,7 +491,7 @@ test_that("works", {
   empirical = TRUE
 
   df <- sim_design(within, between, n, mu, sd, r, empirical)
-  check_sim_stats(df, c("B", "A"))
+  sample_params(df, c("B", "A"))
   
   expect_equal(nrow(df), 400)
   expect_equal(ncol(df), 7)

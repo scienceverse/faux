@@ -15,9 +15,12 @@
 }
 
 .onAttach <- function(libname, pkgname) {
+  welcome <- paste0("Welcome to ", pkgname, " ",
+                    utils::packageVersion(pkgname),
+                    ". For support and examples visit:")
   paste(
     "\n************",
-    "Welcome to faux. For support and examples visit:",
+    welcome,
     "https://scienceverse.github.io/faux/",
     "- Get and set global package options with: faux_options()",
     "************",

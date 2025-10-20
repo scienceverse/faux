@@ -118,7 +118,7 @@ convert_r <- function(target_r = 0,
 #'                B = list(lambda = 5),
 #'                C = list(size = 10, prob = 0.5))
 #' x <- rmulti(100, dist, params, c(0.2, 0.4, 0.6), empirical = TRUE)
-#' get_params(x)
+#' sample_params(x)
 rmulti <- function(n = 100, 
                    dist = c(A = "norm", B = "norm"), 
                    params = list(),
