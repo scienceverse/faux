@@ -1,6 +1,6 @@
 #' Simulate data from design
 #'
-#' Generates a data table with a specified within and between design. See \href{https://scienceverse.github.io/faux/articles/sim_design.html}{\code{vignette("sim_design", package = "faux")}} for examples and details.
+#' Generates a data table with a specified within and between design. See [`vignette("sim_design", package = "faux")`](https://scienceverse.github.io/faux/articles/sim_design.html) for examples and details.
 #'
 #' @param within a list of the within-subject factors
 #' @param between a list of the between-subject factors
@@ -221,7 +221,7 @@ sim_data <- function(design, empirical = FALSE,
     # nest reps
     df_rep <- by(df_return, df_return$.rep., function(x) {
       x$.rep. <- NULL
-      add_labels(x, design)
+      add_labels_from_design(x, design)
     })
     df_return <- data.frame(rep = 1:rep)
     df_return$data <- df_rep # can't assign list in data.frame
@@ -231,7 +231,7 @@ sim_data <- function(design, empirical = FALSE,
     df_return <- df_return[order(df_return$rep),] 
   }
   
-  df_return <- add_labels(df_return, design) # add column labels
+  df_return <- add_labels_from_design(df_return, design) # add column labels
   
   return(df_return)
 }
@@ -244,7 +244,7 @@ sim_data <- function(design, empirical = FALSE,
 #'
 #' @returns a data frame with labelled columns
 #' @keywords internal
-add_labels <- function(data, design = NULL) {
+add_labels_from_design <- function(data, design = NULL) {
   if ("design" %in% names(attributes(data))) {
     # get parameters from design
     design <- get_design(data)
@@ -257,7 +257,7 @@ add_labels <- function(data, design = NULL) {
     attr(data$rep, "label") <- "replicate index"
   
   if ("data" %in% names(data)) {
-    data$data <- lapply(data$data, add_labels, design = design)
+    data$data <- lapply(data$data, add_labels_from_design, design = design)
     attr(data$data, "label") <- "data"
     
     return(data)

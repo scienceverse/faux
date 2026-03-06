@@ -1,6 +1,6 @@
 #' Plot design
 #'
-#' Plots the specified within and between design. See \href{../doc/plots.html}{\code{vignette("plots", package = "faux")}} for examples and details.
+#' Plots the specified within and between design. See [`vignette("plots", package = "faux")`](../doc/plots.html) for examples and details.
 #'
 #' @param x A list of design parameters created by check_design() or a data tbl (in long format)
 #' @param ... A list of factor names to determine visualisation (see vignette) in the order color, x, facet row(s), facet col(s)
@@ -8,6 +8,7 @@
 #' @param palette A brewer palette, defaults to "Dark2" (see ggplot2::scale_colour_brewer)
 #' @param labeller How to label the facets (see ggplot2::facet_grid). "label_value" is used by default.
 #' 
+#' @export
 #' @return plot
 #' 
 #' @examples 
@@ -19,9 +20,6 @@
 #' 
 #' data <- sim_design(within, between, plot = FALSE)
 #' plot_design(data)
-#' 
-#' @export
-#' 
 plot_design <- function(x, ..., geoms = NULL, palette = "Dark2", labeller = "label_value") {
   outlier.alpha <- 1 # default value, might be overridden
   
@@ -45,7 +43,7 @@ plot_design <- function(x, ..., geoms = NULL, palette = "Dark2", labeller = "lab
     if (is.null(geoms)) geoms <- c("violin", "box")
     data <- x
     design <- get_design(data)
-    if (is.null(design)) {
+    if (is.null(design) | length(design) == 0) {
       stop("The data table must have a design attribute")
     }
     if (all(names(data)[1:2] == c("rep", "data"))) {
@@ -63,10 +61,6 @@ plot_design <- function(x, ..., geoms = NULL, palette = "Dark2", labeller = "lab
   
   # set factors to plot ----
   factors <- c(design$within, design$between)
-  # if ("rep" %in% names(data)) {
-  #   factors$rep <- as.list(unique(data$rep))
-  #   names(factors$rep) <- factors$rep
-  # }
   f <- syms(names(factors)) # make it possible to use strings to specify columns
   dv <- sym(names(design$dv))
   
@@ -77,32 +71,26 @@ plot_design <- function(x, ..., geoms = NULL, palette = "Dark2", labeller = "lab
   
   # use long names for factors ----
   for (col in f) {
-    lvl <- factors[[col]] %>% names()
+    lvl <- names(factors[[col]])
     lbl <- factors[[col]]
     data[[col]] <- factor(data[[col]], levels = lvl, labels = lbl)
   }
   
   if (factor_n == 0) {
     p <- ggplot(data, aes(x = 0, y = !!dv, fill = "red", color = "red")) +
-      xlab(design$dv[[1]]) + theme_bw() +
       theme(axis.text.x.bottom = element_blank(),
             axis.ticks.x.bottom = element_blank(),
-            legend.position = "none")
+            legend.position = "none") +
+      labs(x = NULL)
   } else if (factor_n == 1) {
     p <- ggplot(data, aes(!!f[[1]], !!dv,
                           fill = !!f[[1]],
                           color = !!f[[1]])) + 
-      theme_bw() +
-      theme(legend.position = "none") + 
-      labs(x = design$vardesc[[rlang::as_string(f[[1]])]])
+      theme(legend.position = "none")
   } else {
     p <- ggplot(data, aes(!!f[[2]], !!dv,
                           fill = !!f[[1]],
-                          color = !!f[[1]])) + 
-      theme_bw() + 
-      labs(x = design$vardesc[[rlang::as_string(f[[2]])]],
-           fill = design$vardesc[[rlang::as_string(f[[1]])]],
-           color = design$vardesc[[rlang::as_string(f[[1]])]])
+                          color = !!f[[1]]))
   }
   
   # create labelling function ----
@@ -134,9 +122,6 @@ plot_design <- function(x, ..., geoms = NULL, palette = "Dark2", labeller = "lab
     )
     p <- p + facet_grid(eval(expr), labeller = label_func)
   }
-  
-  # add text y-label to all plots
-  p <- p + ylab(design$dv[[1]])
   
   if ("jitter" %in% geoms) {
     p <- p + geom_point(position = position_jitterdodge(
@@ -175,8 +160,12 @@ plot_design <- function(x, ..., geoms = NULL, palette = "Dark2", labeller = "lab
       position = position_dodge(width = 0.9))
   }
   
+  # set labels
+  dict <- c(design$vardesc, design$id, design$dv)
+  
   p + scale_colour_brewer(palette = palette) + 
-      scale_fill_brewer(palette = palette)
+    scale_fill_brewer(palette = palette) +
+    labs(dictionary = dict)
 }
 
 

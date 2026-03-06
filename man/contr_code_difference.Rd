@@ -17,7 +17,7 @@ contr_code_difference(fct, levels = NULL, colnames = NULL)
 the factor with contrasts set
 }
 \description{
-Difference coding sets the grand mean as the intercept. 
+Difference coding sets the grand mean as the intercept.
 Each contrast compares one level with the previous level.
 }
 \examples{

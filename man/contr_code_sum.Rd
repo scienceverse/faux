@@ -19,7 +19,7 @@ contr_code_sum(fct, levels = NULL, omit = length(levels), colnames = NULL)
 the factor with contrasts set
 }
 \description{
-Sum coding sets the grand mean as the intercept. 
+Sum coding sets the grand mean as the intercept.
 Each contrast compares one level with the grand mean.
 }
 \examples{

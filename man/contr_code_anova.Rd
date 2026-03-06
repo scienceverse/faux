@@ -19,7 +19,7 @@ contr_code_anova(fct, levels = NULL, base = 1, colnames = NULL)
 the factor with contrasts set
 }
 \description{
-Anova coding (also called deviation or simple coding) sets the grand mean as the intercept. 
+Anova coding (also called deviation or simple coding) sets the grand mean as the intercept.
 Each contrast compares one level with the reference level (base).
 }
 \examples{

@@ -45,5 +45,4 @@ plot_design(des)
 
 data <- sim_design(within, between, plot = FALSE)
 plot_design(data)
-
 }

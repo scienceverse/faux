@@ -1,4 +1,4 @@
-test_that("x", {
+test_that("add_ranef", {
   data <- expand.grid(
     rater = 1:3,
     stimulus = 1:2,
@@ -19,7 +19,7 @@ test_that("x", {
   expect_equal(rep(rs[1:6], 4), rs)
 })
 
-test_that("x and y", {
+test_that("add_ranef 2", {
   set.seed(1)
   
   nrater <- 5000
@@ -45,7 +45,6 @@ test_that("x and y", {
   expect_equal(cor(x, y), r_xy, tol = .05)
 })
 
-# add_random ----
 test_that("add_random", {
   # start a data frame
   data1 <- add_random(school = 3)
@@ -75,7 +74,6 @@ test_that("add_random", {
   expect_false(all(nested_in_A$C == nested_in_B$C))
 })
 
-## ids ----
 test_that("add_random ids", {
   # crossed random factors
   ids <- c("A", "B", "C")
@@ -87,7 +85,7 @@ test_that("add_random ids", {
     school = rep(ids, each = 3),
     class = rep(paste0("class", 1:3), 3)
   )
-  expect_equal(data1b, check)
+  expect_equivalent(data1b, check)
   
   # nested random factors
   data2 <- add_random(data1, class = 2, .nested_in = "school")
@@ -106,7 +104,6 @@ test_that("add_random ids", {
   expect_equal(data3$class, LETTERS[1:9])
 })
 
-# add_between ----
 test_that("add_between", {
   base <- add_random(subj = 4, item = 2)
   
@@ -209,7 +206,6 @@ test_that("add_between", {
   expect_equal(levels(x$letter), c("A", "B"))
 })
 
-# add_within ----
 test_that("add_within", {
   base <- add_random(subj = 4, item = 2)
   
@@ -241,3 +237,56 @@ test_that("add_within", {
   expect_equal(levels(x$letter), c("A", "B"))
 })
 
+test_that("factor_char", {
+  # should be numeric
+  exp <- 1:5
+  x <- 1:5
+  obs <- factor_char(x)
+  expect_equal(obs, exp)
+  
+  x <- as.character(1:5)
+  obs <- factor_char(x)
+  expect_equal(obs, exp)
+  
+  exp <- 0:1
+  x <- 0:1
+  obs <- factor_char(x)
+  expect_equal(obs, exp)
+  
+  x <- c('0', '1')
+  obs <- factor_char(x)
+  expect_equal(obs, exp)
+  
+  x <- c(0L, 1L)
+  obs <- factor_char(x)
+  expect_equal(obs, exp)
+  
+  x <- c(0.0, 1.0)
+  obs <- factor_char(x)
+  expect_equal(obs, exp)
+  
+  # should be logical
+  exp <- c(T, F)
+  
+  x <- c("TRUE", "FALSE")
+  obs <- factor_char(x)
+  expect_equal(obs, exp)
+  
+  x <- c(TRUE, FALSE)
+  obs <- factor_char(x)
+  expect_equal(obs, exp)
+  
+  x <- c("T", "F")
+  obs <- factor_char(x)
+  expect_equal(obs, exp)
+
+  # should be factor
+  x <- LETTERS[1:5]
+  exp <- factor(x, x)
+  
+  obs <- factor_char(x)
+  expect_equal(obs, exp)
+  
+  obs <- factor_char(exp)
+  expect_equal(obs, exp)
+})

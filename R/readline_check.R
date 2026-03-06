@@ -5,7 +5,7 @@
 #' @param min the minimum value
 #' @param max the maximum value
 #' @param warning an optional custom warning message
-#' @param default the default option to return if the entry is blank, NULL allows no default, the default value will be displayed after the text as [default]
+#' @param default the default option to return if the entry is blank, NULL allows no default, the default value will be displayed after the text as default
 #' @param ... other arguments to pass to grep
 #'
 #' @return the validated result of readline

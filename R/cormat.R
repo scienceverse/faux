@@ -1,9 +1,10 @@
 #' Make a correlation matrix
 #'
-#' \code{cormat} makes a correlation matrix from a single number, 
-#' vars\*vars matrix, vars\*vars vector, or a vars\*(vars-1)/2 vector.
+#' `cormat` makes a correlation matrix from a single number, 
+#' vars$\times$vars matrix, vars$\times$vars vector, or a vars$\times$(vars-1)/2 vector.
 #'
-#' @param cors the correlations among the variables (can be a single number, vars\*vars matrix, vars\*vars vector, or a vars\*(vars-1)/2 vector)
+#' @param cors the correlations among the variables (can be a single number, 
+#' vars$\times$vars matrix, vars$\times$vars vector, or a vars$\times$(vars-1)/2 vector)
 #' @param vars the number of variables in the matrix
 #' 
 #' @return matrix
@@ -53,7 +54,7 @@ cormat <- function(cors = 0, vars = 3) {
 
 #' Make Correlation Matrix from Triangle
 #'
-#' \code{cormat_from_triangle} makes a correlation matrix from a vector of the upper right triangle
+#' `cormat_from_triangle` makes a correlation matrix from a vector of the upper right triangle
 #'
 #' @param cors the correlations among the variables as a vars\*(vars-1)/2 vector
 #' 
@@ -101,7 +102,7 @@ cormat_from_triangle <- function(cors) {
 
 #' Check a Matrix is Positive Definite
 #'
-#' \code{is_pos_def} makes a correlation matrix from a vector
+#' `is_pos_def` makes a correlation matrix from a vector
 #'
 #' @param cor_mat a correlation matrix
 #' @param tol the tolerance for comparing eigenvalues to 0
@@ -120,7 +121,7 @@ is_pos_def <- function(cor_mat, tol=1e-08) {
 
 #' Limits on Missing Value for Positive Definite Matrix
 #'
-#' \code{pos_def_limits} returns min and max possible values for a positive definite matrix with a specified missing value
+#' `pos_def_limits` returns min and max possible values for a positive definite matrix with a specified missing value
 #'
 #' @param ... the correlations among the variables as a vars\*(vars-1)/2 vector
 #' @param steps the tolerance for min and max values

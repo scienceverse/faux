@@ -1,6 +1,6 @@
 #' Generate a mixed design from existing data
 #'
-#' \code{sim_mixed_df()} produces a data table with the same distributions of 
+#' `sim_mixed_df()` produces a data table with the same distributions of 
 #' by-subject and by-item random intercepts as an existing data table.
 #'
 #' @param data the existing tbl

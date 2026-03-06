@@ -13,9 +13,9 @@ add_ranef(.data, .by = NULL, ..., .cors = 0, .empirical = FALSE)
 
 \item{...}{the name and standard deviation of each random effect}
 
-\item{.cors}{the correlations among multiple random effects, to be passed to \code{\link{rnorm_multi}} as r}
+\item{.cors}{the correlations among multiple random effects, to be passed to \code{\link[=rnorm_multi]{rnorm_multi()}} as r}
 
-\item{.empirical}{logical. To be passed to \code{\link{rnorm_multi}} as empirical}
+\item{.empirical}{logical. To be passed to \code{\link[=rnorm_multi]{rnorm_multi()}} as empirical}
 }
 \value{
 data frame with new random effects columns

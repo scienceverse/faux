@@ -25,7 +25,7 @@ readline_check(
 
 \item{warning}{an optional custom warning message}
 
-\item{default}{the default option to return if the entry is blank, NULL allows no default, the default value will be displayed after the text as [default]}
+\item{default}{the default option to return if the entry is blank, NULL allows no default, the default value will be displayed after the text as default}
 
 \item{...}{other arguments to pass to grep}
 }

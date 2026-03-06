@@ -127,3 +127,8 @@ reference:
   - '`gamma2norm`'
   - '`nbinom2norm`'
   - '`unif2norm`'
+- title: Deprecated Functions
+  desc: ~
+  contents:
+  - '`get_params`'
+

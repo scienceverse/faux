@@ -20,7 +20,7 @@ rmulti(
 
 \item{params}{A list of lists of the arguments to pass to each distribution function}
 
-\item{r}{the correlations among the variables (can be a single number, vars\*vars matrix, vars\*vars vector, or a vars\*(vars-1)/2 vector)}
+\item{r}{the correlations among the variables (can be a single number, vars$\times$vars matrix, vars$\times$vars vector, or a vars$\times$(vars-1)/2 vector)}
 
 \item{empirical}{logical. If true, params specify the sample parameters, not the population parameters}
 

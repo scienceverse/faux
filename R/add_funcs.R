@@ -3,8 +3,8 @@
 #' @param .data the data frame
 #' @param .by the grouping column (groups by row if NULL)
 #' @param ... the name and standard deviation of each random effect
-#' @param .cors the correlations among multiple random effects, to be passed to \code{\link{rnorm_multi}} as r
-#' @param .empirical logical. To be passed to \code{\link{rnorm_multi}} as empirical
+#' @param .cors the correlations among multiple random effects, to be passed to [rnorm_multi()] as r
+#' @param .empirical logical. To be passed to [rnorm_multi()] as empirical
 #'
 #' @return data frame with new random effects columns
 #' @export
@@ -34,6 +34,176 @@ add_ranef <- function(.data, .by = NULL, ..., .cors = 0, .empirical = FALSE) {
   
   dplyr::left_join(.data, ranefs, by = .by)
 }
+
+#' Add a dependent variable to a fixed-effect model
+#'
+#' @param .data the data frame
+#' @param vars a vector of the DV(s) to create
+#' @param between specifies the between cells
+#' @param mean the mean(s) for the DV(s) - ignored if params is set
+#' @param sd the SD(s) for the DV(s) - ignored if params is set
+#' @param r the correlation for the DVs (if >1 DV)
+#' @param dist the distribution(s) for the DVs
+#' @param params the distribution parameters
+#' @param empirical logical. If true, mu, sd, r and params specify the empirical not population statistics
+#'
+#' @returns a data frame with new DV column(s)
+#' @export
+#'
+#' @examples
+#' df <- add_random(id = 1000) |>
+#'   add_between(condition = c("ctl", "exp")) |>
+#'   add_dv(vars = c(pre = "Pre-test Score", post = "Post-test Score"),
+#'          between = list(condition = "ctl"),
+#'          mean = c(100, 105),
+#'          sd = 10,
+#'          r = 0.5,
+#'          ) |>
+#'   add_dv(vars = c(pre = "Pre-test Score", post = "Post-test Score"),
+#'          between = list(condition = "exp"),
+#'          mean = c(100, 110),
+#'          sd = c(10, 8),
+#'          r = 0.4)
+add_dv <- function(.data, 
+                   vars = c("dv" = "Dependent Variable"), 
+                   between = list(),
+                   mean = 0,
+                   sd = 1,
+                   r = 0, 
+                   dist = "norm",
+                   params = list(), 
+                   empirical = FALSE) {
+  names(vars) <- names(vars) %||% unlist(vars)
+  
+  design <- get_design(.data) %||% list()
+  design$dv <- vars
+  attr(.data, "design") <- design
+  if (length(design$within) > 0 & 
+      all(names(design$within) %in% names(.data))) {
+    # make data wide
+    if (!all(names(vars) %in% names(.data))) {
+      # add new dv
+      .data[, names(vars)] <- NA_real_
+    }
+    
+    .data <- long2wide(.data)
+    vars <- cell_combos(design$within, sep = design$sep)
+  } else {
+    vars <- names(vars)
+  }
+  
+  # check all columns exist
+  cols <- names(between)
+  wrong_col <- setdiff(cols, names(.data))
+  if (length(wrong_col)) {
+    stop(paste(wrong_col, collapse = ", "), " is not a column")
+  }
+  
+  # filter .data to 
+  subdat <- rep(TRUE, nrow(.data))
+  for (x in cols) {
+    subdat <- subdat & (.data[[x]] %in% between[[x]])
+  }
+  
+  n <- sum(subdat)
+  vlen <- length(vars)
+  
+  # make params if mean/sd used and all normal
+  if (all(dist == "norm") & length(params) == 0) {
+    mean <- rep_len(mean, vlen)
+    sd <- rep_len(sd, vlen)
+    for (i in seq_along(vars)) {
+      varname <- vars[[i]]
+      params[[varname]] <- list(mean = mean[[i]], sd = sd[[i]])
+    }
+  }
+  
+  if (length(dist) != vlen) {
+    dist <- rep_len(dist, vlen)
+  }
+  names(dist) <- names(dist) %||% vars
+  
+  .data[subdat, names(dist)] <- rmulti(n, dist, params, r, empirical, as.matrix = TRUE)
+  
+  if (length(design$within)) {
+    .data <- wide2long(.data)
+  }
+  
+  .data
+}
+
+
+#' Add a dependent variable to a mixed effects model
+#' 
+#' Add a dependent variable to a mixed model simulation using a formula and specification of fixed and random effects parameters.
+#' 
+#' Fixed effects are specified as a named list for each effect in the equation. For example, for the equation `y ~ a * b + (1 | id)`, the fixed effects might be specified as such: `list(a = 5, b = 10, "a:b" = 0)`.
+#' 
+#' Random effects are also specified as a named list of standard deviations for the random intercept and slopes, plus optional correlations. For example, for the equation `y ~ a * b + (b | id)`, the random effects might be specified as such: `list(id = list(intercept = 10, b = 5, .cors = 0.4))`. 
+#'
+#' @param .data the data frame
+#' @param formula The formula for your model
+#' @param intercept The (grand) intercept value
+#' @param error The SD of the error term
+#' @param fixef A list of fixed effects (see Details)
+#' @param ranef A list of random effects parameters (see Details)
+#'
+#' @return a data frame with new DV column
+#' @keywords internal
+#'
+#' @examples
+#' add_random(id = 1000) |> 
+#'   add_between(a = c("A1", "A2")) |>
+#'   add_within(b = c("B1", "B2")) |>
+#'   add_dv_mixed(y ~ a*b + (b | id),
+#'          intercept = 100,
+#'          error = 10,
+#'          fixef = list(a = 5, b = 10, "a:b" = 0),
+#'          ranef = list(id = list(intercept = 10, b = 5, .cors = 0.4))
+#'   )
+# add_dv_mixed <- function(.data, formula = y ~ 1, 
+#                    intercept = 0, 
+#                    error = 1,
+#                    fixef = list(), 
+#                    ranef = list()) {
+# if (is.character(formula)) formula <- stats::as.formula(formula)
+# dv <- all.vars(formula[[2]])
+# .data[dv] <- 0
+# m <- lm(formula, .data)
+# 
+# conames <- names(m$coefficients)
+# coefs <- c(intercept)
+# m$coefficients <- setNames(coefs, conames)
+# err <- rnorm(nrow(.data), 0, error)
+# .data[dv] <- predict(m) + err
+#   
+#   return(.data)
+# }
+
+#' Add column labels
+#'
+#' @param .data the data frame
+#' @param ... the column names and lables (e.g., `id = "Student ID"`)
+#'
+#' @return data frame with column labels
+#' @export
+#'
+#' @examples
+#' df <- add_random(rid = 2, sid = 2) |>
+#'   add_labels(rid = "Rater ID", sid = "Stimulus ID")
+#' View(df)
+add_labels <- function(.data, ...) {
+  cols <- list(...)
+  
+  for (col in names(cols)) {
+    if (col %in% names(.data))
+      attr(.data[[col]], "label") <- cols[[col]]
+  }
+  
+  return(.data)
+}
+
+
 
 #' Recode a categorical column
 #'
@@ -88,6 +258,12 @@ add_recode <- function(.data, .col, .newcol = paste0(col, ".c"), ...) {
 #'              .nested_in = "school")
 add_random <- function(.data = NULL, ..., .nested_in = NULL) {
   grps <- list(...)
+  
+  # set design
+  design <- attr(.data, "design") %||% list()
+  design$id <- design$id %||% list()
+  for (x in names(grps)) design$id[[x]] <- x
+  design$sep <- design$sep %||% faux_options("sep")
 
   if (is.null(.nested_in)) {
     # create IDs
@@ -101,6 +277,8 @@ add_random <- function(.data = NULL, ..., .nested_in = NULL) {
     ranfacs <- do.call(tidyr::crossing, ids)
     .mydata <- .data # stops rlang_data_pronoun warning
     new_data <- tidyr::crossing(.mydata, ranfacs)
+    
+    if (length(ids) == 1) design$n <- length(ids[[1]])
   } else {
     if (length(grps) > 1) {
       stop("You can only add 1 nested random factor at a time")
@@ -134,6 +312,8 @@ add_random <- function(.data = NULL, ..., .nested_in = NULL) {
     new_data <- dplyr::right_join(.data, newdat, by = .nested_in, 
                                   relationship = "many-to-many")
   }
+  
+  attr(new_data, "design") <- design
 
   new_data
 }
@@ -154,6 +334,16 @@ add_random <- function(.data = NULL, ..., .nested_in = NULL) {
 #'   add_between("subj", condition = c("cntl", "test")) %>%
 #'   add_between("item", version = c("A", "B"))
 add_between <- function(.data, .by = NULL, ..., .shuffle = FALSE, .prob = NULL) {
+  between <- lapply(list(...), function(b) {
+    l <- as.list(b)
+    names(l) <- names(l) %||% b
+    l
+  })
+  
+  design <- attr(.data, "design") %||% list()
+  design$between <- design$between %||% list()
+  design$between <- c(design$between, between)
+  
   if (is.null(.by)) {
     .by <- names(.data)
     grps <- .data
@@ -166,7 +356,7 @@ add_between <- function(.data, .by = NULL, ..., .shuffle = FALSE, .prob = NULL) 
   if (is.null(.prob)) {
     # equal probability for each level
     # return as equal combos as possible 
-    vars <- list(...) %>%
+    vars <- lapply(between, names) %>%
       mapply(factor_char, ., SIMPLIFY = FALSE) %>%
       do.call(tidyr::crossing, .)
       
@@ -175,7 +365,8 @@ add_between <- function(.data, .by = NULL, ..., .shuffle = FALSE, .prob = NULL) 
     }
   } else {
     # set prob for each level
-    vars <- list(...) %>% mapply(factor_char, ., SIMPLIFY = FALSE)
+    vars <- lapply(between, names) %>% 
+      mapply(factor_char, ., SIMPLIFY = FALSE)
     exact_prob <- (sum(unlist(.prob)) == nrow(grps))
     crossed_vars <- do.call(tidyr::crossing, vars)
     
@@ -206,7 +397,10 @@ add_between <- function(.data, .by = NULL, ..., .shuffle = FALSE, .prob = NULL) 
     }
   }
   
-  dplyr::left_join(.data, grps, by = .by)
+  df <- dplyr::left_join(.data, grps, by = .by)
+  attr(df, "design") <- design
+  
+  return(df)
 }
 
 #' Add within factors
@@ -222,6 +416,16 @@ add_between <- function(.data, .by = NULL, ..., .shuffle = FALSE, .prob = NULL) 
 #' add_random(subj = 2, item =  2) %>%
 #'   add_within("subj", time = c("pre", "post"))
 add_within <- function(.data, .by = NULL, ...) {
+  within <- lapply(list(...), function(w) {
+    l <- as.list(w)
+    names(l) <- names(l) %||% w
+    l
+  })
+  
+  design <- attr(.data, "design") %||% list()
+  design$within <- design$within %||% list()
+  design$within <- c(design$within, within)
+  
   if (is.null(.by)) {
     .by <- names(.data)
     grps <- .data
@@ -230,17 +434,33 @@ add_within <- function(.data, .by = NULL, ...) {
   }
   
   # make vars factors, keep original order
-  vars <- list(...) %>% mapply(factor_char, ., SIMPLIFY = FALSE)
+  vars <- lapply(within, names) %>% 
+    mapply(factor_char, ., SIMPLIFY = FALSE)
   
   newdat <- c(list(grps), vars) %>%
     do.call(tidyr::crossing, .)
   
-  dplyr::left_join(.data, newdat, by = .by, 
+  df <- dplyr::left_join(.data, newdat, by = .by, 
                    relationship = "many-to-many")
+  
+  attr(df, "design") <- design
+  
+  return(df)
 }
 
 # convert only character vectors to factors
 factor_char <- function(x) {
+  # check if character values should be converted
+  if (is.character(x)) {
+    if (all(x %in% c("T", "F"))) {
+      x <- as.logical(x)
+    } else if (all(x %in% suppressWarnings(as.numeric(x)))) {
+      x <- as.numeric(x)
+    } else if (all(x %in% as.logical(x))) {
+      x <- as.logical(x)
+    } 
+  }
+  
   if (is.character(x)) {
     factor(x, x)
   } else {

@@ -15,6 +15,6 @@ lhs \%>\% rhs
 The result of applying the function in the rhs to the value in the lhs.
 }
 \description{
-See \code{dplyr::\link[dplyr]{\%>\%}} for details.
+See \verb{dplyr::[\\\%>\\\%][dplyr::\\\%>\\\%]} for details.
 }
 \keyword{internal}

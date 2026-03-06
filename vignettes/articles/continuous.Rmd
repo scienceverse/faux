@@ -89,7 +89,7 @@ dat <- sim_design(within = list(time = c("pre", "post"),
                 r = r, plot = FALSE)
 ```
 
-You have to make this sort of dataset in wide format and then manually convert it to long. I prefer `gather` and `spread`, but I'm trying to learn the new pivot functions, so I'll use them here.
+You have to make this sort of dataset in wide format and then manually convert it to long. 
 
 ```{r}
 long_dat <- dat %>%

@@ -17,7 +17,7 @@ codebook(
 \arguments{
 \item{data}{The data frame to generate a codebook for}
 
-\item{name}{The name of this dataset (if NULL, will be the same as `data`, limited to 64 characters)}
+\item{name}{The name of this dataset (if NULL, will be the same as \code{data}, limited to 64 characters)}
 
 \item{vardesc}{Optional variable properties in the format of a named list of vectors (can be named or unnamed and in the same order as the data) from the options "description", "privacy", "dataType", "identifier", "minValue", "maxValue", "levels", "levelsOrdered", "na", "naValue", "alternateName", "privacy", "unitCode", "unitText"}
 

@@ -7,11 +7,11 @@
 message(..., domain = NULL, appendLF = TRUE)
 }
 \arguments{
-\item{...}{message components (see \code{\link[base]{message}})}
+\item{...}{message components (see \code{\link[base:message]{base::message()}})}
 
-\item{domain}{(see \code{\link[base]{message}})}
+\item{domain}{(see \code{\link[base:message]{base::message()}})}
 
-\item{appendLF}{append new line? (see \code{\link[base]{message}})}
+\item{appendLF}{append new line? (see \code{\link[base:message]{base::message()}})}
 }
 \value{
 TRUE

@@ -17,7 +17,7 @@ contr_code_poly(fct, levels = NULL, colnames = NULL)
 the factor with contrasts set
 }
 \description{
-Polynomial coding sets the grand mean as the intercept. 
+Polynomial coding sets the grand mean as the intercept.
 Each contrast tests a trend (linear, quadratic, cubic, etc.). This is only suitable for ordered factors.
 }
 \examples{

@@ -37,7 +37,7 @@ sample_from_pop <- function(n = 100, mu = 0, sd = 1, r = 0) {
 
 #' Make a normal vector correlated to existing vectors
 #'
-#' \code{rnorm_pre} Produces a random normally distributed vector with the specified correlation to one or more existing vectors
+#' `rnorm_pre` Produces a random normally distributed vector with the specified correlation to one or more existing vectors
 #'
 #' @param x the existing vector or data table of all vectors
 #' @param mu desired mean of returned vector
@@ -58,7 +58,7 @@ sample_from_pop <- function(n = 100, mu = 0, sd = 1, r = 0) {
 #' @export
 rnorm_pre <- function (x, mu=0, sd=1, r=0, empirical = FALSE, threshold = 1e-12) {
   # error checking
-  if (is.vector(x)) x <- data.frame(x)
+  if (is.atomic(x)) x <- data.frame(x)
   #if (!is.numeric(x)) stop("x must be numeric")
   if (nrow(x) < 3) stop("x must have length > 2")
   

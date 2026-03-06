@@ -1,12 +1,12 @@
 #' Multiple correlated normal distributions
 #' 
-#' Make normally distributed vectors with specified relationships. See \href{../doc/rnorm_multi.html}{\code{vignette("rnorm_multi", package = "faux")}} for details.
+#' Make normally distributed vectors with specified relationships. See [`vignette("rnorm_multi", package = "faux")`](../doc/rnorm_multi.html) for details.
 #'
 #' @param n the number of samples required
 #' @param vars the number of variables to return
 #' @param mu a vector giving the means of the variables (numeric vector of length 1 or vars)
 #' @param sd the standard deviations of the variables (numeric vector of length 1 or vars)
-#' @param r the correlations among the variables (can be a single number, vars\*vars matrix, vars\*vars vector, or a vars\*(vars-1)/2 vector)
+#' @param r the correlations among the variables (can be a single number, vars$\times$vars matrix, vars$\times$vars vector, or a vars$\times$(vars-1)/2 vector)
 #' @param varnames optional names for the variables (string vector of length vars) defaults if r is a matrix with column names
 #' @param empirical logical. If true, mu, sd and r specify the empirical not population mean, sd and covariance 
 #' @param as.matrix logical. If true, returns a matrix

@@ -19,7 +19,7 @@ messy(data, prop = 0, ..., replace = NA)
 the messed up table
 }
 \description{
-Insert NA or another replacement value for some proportion of specified 
+Insert NA or another replacement value for some proportion of specified
 columns to simulate missing data.
 }
 \examples{

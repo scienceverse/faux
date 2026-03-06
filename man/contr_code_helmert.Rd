@@ -17,7 +17,7 @@ contr_code_helmert(fct, levels = NULL, colnames = NULL)
 the factor with contrasts set
 }
 \description{
-Helmert coding sets the grand mean as the intercept. 
+Helmert coding sets the grand mean as the intercept.
 Each contrast compares one level with the mean of previous levels.
 }
 \examples{

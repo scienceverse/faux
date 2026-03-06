@@ -2,7 +2,7 @@
 #' 
 #' Given a target r-value, returns the correlation you need to induce in a bivariate normal distribution to have the target correlation after converting distributions. 
 #' 
-#' See \link[stats:Distributions]{Distributions} for distributions and their various arguments to specify in params1 and params2.
+#' See [Distributions][stats::Distributions] for distributions and their various arguments to specify in params1 and params2.
 #'
 #' @param target_r The target correlation
 #' @param dist1 The target distribution function for variable 1 (e.g., norm, binom, gamma, truncnorm)
@@ -103,7 +103,7 @@ convert_r <- function(target_r = 0,
 #' @param n the number of samples required
 #' @param dist A named vector of the distributions of each variable
 #' @param params A list of lists of the arguments to pass to each distribution function
-#' @param r the correlations among the variables (can be a single number, vars\*vars matrix, vars\*vars vector, or a vars\*(vars-1)/2 vector)
+#' @param r the correlations among the variables (can be a single number, vars$\times$vars matrix, vars$\times$vars vector, or a vars$\times$(vars-1)/2 vector)
 #' @param empirical logical. If true, params specify the sample parameters, not the population parameters 
 #' @param as.matrix logical. If true, returns a matrix
 #'
@@ -126,6 +126,15 @@ rmulti <- function(n = 100,
                    empirical = FALSE, 
                    as.matrix = FALSE) {
   vars <- length(dist)
+  
+  if (vars == 1) {
+    # get rfunc
+    rfunc <- distfuncs(dist[[1]])$r
+    params[[1]]$n <- n
+    values <- do.call(rfunc, params[[1]])
+    return(values)
+  }
+
   if (vars < 2) stop("You must specify at least 2 variables in `dist`")
   varnames <- names(dist) %||% LETTERS[1:vars]
   

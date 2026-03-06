@@ -1,13 +1,13 @@
 faux_options(plot = FALSE)
 
-# errors ----
+# check_design ----
 test_that("errors", {
   expect_error(check_design(n = -1), "All n must be >= 0")
   expect_warning(check_design(n = 0), "Some cell Ns are 0. Make sure this is intentional.")
   expect_warning(check_design(n = 10.3), "Some cell Ns are not integers. They have been rounded up to the nearest integer.")
 })
 
-# n as vector ----
+
 test_that("n as vector", {
   # unnamed vector with 2b2w design
   expect_silent(design <- check_design(within = 2, between = 2, n = c(10, 20)))
@@ -28,7 +28,6 @@ test_that("n as vector", {
 })
 
 
-# params ----
 test_that("params", {
   # numeric n
   expect_silent(check_design(between = 2, n = list("B1a" = 10, "B1b" = 20)))
@@ -69,7 +68,6 @@ test_that("params", {
                err, fixed = TRUE)
 })
 
-# no factors ----
 test_that("no factors", {
   design <- check_design()
   expect_equal(design$within, list())
@@ -77,7 +75,6 @@ test_that("no factors", {
   expect_equal(design$dv, list(y = "value"))
 })
 
-# 2w ----
 test_that("2w", {
   within <- list(time = c("night", "day"))
   between <- list()
@@ -99,7 +96,6 @@ test_that("2w", {
   expect_true("design" %in% class(design))
 })
 
-# 2b ----
 test_that("2b", {
   within <- list()
   between <- list(time = c("night", "day"))
@@ -119,7 +115,6 @@ test_that("2b", {
   expect_equal(design$id, list(id = "id"))
 })
 
-# 2w*2b ----
 test_that("2w*2b", {
   within  <- list(time = c("night", "day"))
   between <- list(pet = c("dog", "cat"))
@@ -141,7 +136,6 @@ test_that("2w*2b", {
   expect_equal(design$id, list(id = "id"))
 })
 
-# 2w*2w*2b*2b ----
 test_that("2w*2w*2b*2b", {
   within <- list(
     time = c(night = "night time", day = "day time"), 
@@ -179,7 +173,6 @@ test_that("2w*2w*2b*2b", {
   expect_equal(design$id, list(id = "id"))
 })
 
-# design spec ----
 test_that("design spec", {
   between <- list(
     "B" = c("B1", "B2")
@@ -215,7 +208,6 @@ test_that("design spec", {
   expect_equal(design$id, id)
 })
 
-# interactions ----
 test_that("interactions", {
   faux_options(sep = "_")
   n <- list(
@@ -230,7 +222,6 @@ test_that("interactions", {
   expect_equal(design$n, n)
 })
 
-# anon factors ----
 test_that("anon factors", {
   design <- check_design(c(2, 4), c(2, 2))
   
@@ -248,7 +239,6 @@ test_that("anon factors", {
   expect_equal(design$between, b)
 })
 
-# wierd factor names ----
 test_that("wierd factor names", {
   # only replaces underscores
   within <- list("A" = c("A_1", "A 2"),
@@ -256,7 +246,6 @@ test_that("wierd factor names", {
   expect_error(check_design(within))
 })
 
-# make_id ----
 test_that("make_id", {
   expect_equal(make_id(10), c("S01", "S02", "S03", "S04", "S05", 
                               "S06", "S07", "S08", "S09", "S10"))
@@ -278,7 +267,6 @@ test_that("make_id", {
   expect_equal(make_id(100:200)[[1]], "S100")
 })
 
-# params table ----
 test_that("params table", {
   des <- check_design()
   params <- data.frame(y = "value", n = 100, mu = 0, sd = 1)
@@ -340,7 +328,6 @@ test_that("params table", {
   expect_equal(op[1:length(expected)], expected)
 })
 
-# sep ----
 test_that("sep", {
   faux_options(sep = ".")
   design <- check_design(
@@ -361,7 +348,6 @@ test_that("sep", {
   faux_options(sep = "_")
 })
 
-# vardesc ----
 test_that("vardesc", {
   between <- list(
     B = c(B1 = "Level 1B", B2 = "Level 2B")
@@ -400,7 +386,51 @@ test_that("vardesc", {
   expect_mapequal(design$vardesc, vardesc)
 })
 
-# get_design ----
+test_that("print.design", {
+  d <- check_design()
+  obs <- capture_output_lines(print.design(d))
+  exp <- c("* [DV] y: value  ", 
+           "* [ID] id: id  ", 
+           "* Within-subject variables:", 
+           "{empty}", 
+           "* Between-subject variables:", 
+           "{empty}", 
+           "* Parameters:", 
+           "    |y     |   n| mu| sd|", 
+           "    |:-----|---:|--:|--:|", 
+           "    |value | 100|  0|  1|", 
+           "")
+  expect_equal(obs, exp)
+  
+  
+  d <- check_design(2,2,10,2,2,.5,
+                    dv = c(dv = "score"), 
+                    id = c(ID = "SubjID"))
+  obs <- capture_output_lines(print.design(d))
+  exp <- c(
+    "* [DV] dv: score  ",
+    "* [ID] ID: SubjID  ",
+    "* Within-subject variables:",
+    "    * W1: ",
+    "        * W1a: W1a",
+    "        * W1b: W1b",
+    "* Between-subject variables:",
+    "    * B1: ",
+    "        * B1a: B1a",
+    "        * B1b: B1b",
+    "* Parameters:",
+    "    |B1  |W1  | W1a| W1b|  n| mu| sd|",
+    "    |:---|:---|---:|---:|--:|--:|--:|",
+    "    |B1a |W1a | 1.0| 0.5| 10|  2|  2|",
+    "    |B1a |W1b | 0.5| 1.0| 10|  2|  2|",
+    "    |B1b |W1a | 1.0| 0.5| 10|  2|  2|",
+    "    |B1b |W1b | 0.5| 1.0| 10|  2|  2|",
+    ""
+  )
+  expect_equal(obs, exp)
+})
+
+# get/set design ----
 test_that("get_design", {
   data <- sim_design(2, 2)
   design <- get_design(data)
@@ -408,7 +438,6 @@ test_that("get_design", {
   expect_equal(design$id, list(id = "id"))
 })
 
-# set_design ----
 test_that("set_design", {
   design <- check_design()
   data <- data.frame(id = 1:100, y = rnorm(100))
@@ -418,5 +447,203 @@ test_that("set_design", {
   expect_equal(class(data_design), c("faux", "data.frame"))
 })
 
+# json_design ----
+test_that("defaults", {
+  des <- check_design(mu = 1.123456789, plot = FALSE)
+  json <- json_design(des)
+  txt <- '{"within":[],"between":[],"dv":{"y":"value"},"id":{"id":"id"},"vardesc":[],"n":{"y":100},"mu":{"y":{"y":1.12345679}},"sd":{"y":{"y":1}},"r":[],"sep":"_"}'
+  class(txt) <- "json"
+  
+  expect_equal(json, txt)
+  
+  des <- check_design(2,2, plot = FALSE)
+  json <- json_design(des)
+  txt <- '{"within":{"W1":{"W1a":"W1a","W1b":"W1b"}},"between":{"B1":{"B1a":"B1a","B1b":"B1b"}},"dv":{"y":"value"},"id":{"id":"id"},"vardesc":{"W1":"W1","B1":"B1"},"n":{"B1a":100,"B1b":100},"mu":{"B1a":{"W1a":0,"W1b":0},"B1b":{"W1a":0,"W1b":0}},"sd":{"B1a":{"W1a":1,"W1b":1},"B1b":{"W1a":1,"W1b":1}},"r":{"B1a":[[1,0],[0,1]],"B1b":[[1,0],[0,1]]},"sep":"_"}'
+  class(txt) <- "json"
+  
+  expect_equal(json, txt)
+})
+
+test_that("json_design filename", {
+  testfile <- tempfile(fileext = ".json")
+  des <- check_design(plot = FALSE)
+  json <- json_design(des, testfile)
+  des2 <- jsonlite::read_json(testfile)
+  json2 <- jsonlite::toJSON(des2, auto_unbox = TRUE)
+  des$params <- NULL
+  expect_equivalent(des, des2)
+  expect_equal(json, json2)
+  
+  file.remove(testfile)
+  
+  # no .json suffix
+  testfile <- tempfile()
+  testfile_json <- paste0(testfile, ".json")
+  json <- json_design(des, testfile)
+  des2 <- jsonlite::read_json(testfile_json)
+  json2 <- jsonlite::toJSON(des2, auto_unbox = TRUE)
+  des$params <- NULL
+  expect_equivalent(des, des2)
+  expect_equal(json, json2)
+  
+  file.remove(testfile_json)
+})
+
+test_that("json_design digits", {
+  des <- check_design(mu = 1.123456789, plot = FALSE)
+  json <- json_design(des, digits = 3)
+  txt <- '{"within":[],"between":[],"dv":{"y":"value"},"id":{"id":"id"},"vardesc":[],"n":{"y":100},"mu":{"y":{"y":1.123}},"sd":{"y":{"y":1}},"r":[],"sep":"_"}'
+  class(txt) <- "json"
+  
+  expect_equal(json, txt)
+  
+  json <- json_design(des, digits = 4)
+  txt <- '{"within":[],"between":[],"dv":{"y":"value"},"id":{"id":"id"},"vardesc":[],"n":{"y":100},"mu":{"y":{"y":1.1235}},"sd":{"y":{"y":1}},"r":[],"sep":"_"}'
+  class(txt) <- "json"
+  
+  expect_equal(json, txt)
+})
+
+test_that("json_design pretty", {
+  des <- check_design(plot = FALSE)
+  json <- json_design(des, pretty = TRUE)
+  txt <- '{
+  "within": [],
+  "between": [],
+  "dv": {
+    "y": "value"
+  },
+  "id": {
+    "id": "id"
+  },
+  "vardesc": [],
+  "n": {
+    "y": 100
+  },
+  "mu": {
+    "y": {
+      "y": 0
+    }
+  },
+  "sd": {
+    "y": {
+      "y": 1
+    }
+  },
+  "r": [],
+  "sep": "_"
+}'
+  
+  class(txt) <- "json"
+  expect_equal(json, txt)
+})
+
+
+
 faux_options(plot = TRUE)
 faux_options(sep = "_")
+
+# New design functions ----
+
+test_that("new_design", {
+  d <- new_design()
+  exp_names <- c("id", "dv", "within", "between", "labels", "dist", "params", "r")
+  expect_equal(names(d), exp_names)
+  expect_s3_class(d, "design")
+  
+  expect_equal(d$id, c(id = "ID"))
+  expect_equal(d$dv, c(y = "DV"))
+  expect_equal(d$within, list())
+  expect_equal(d$between, list())
+  expect_equal(d$labels, list())
+  expect_equal(d$dist, "norm")
+  expect_equal(d$params, NULL)
+  expect_equal(d$r, 0)
+  
+})
+
+test_that("validate_design", {
+  design <- new_design()
+  
+  d <- validate_design()
+  expect_equal(d, design)
+  
+  # named design
+  d <- validate_design(design = design)
+  expect_equal(d, design)
+  
+  # unnamed design
+  d <- validate_design(design)
+  expect_equal(d, design)
+  
+  # overwrite ID and DV
+  d <- validate_design(id = "XX", dv = "YY")
+  expect_equal(d$id, c(XX = "XX"))
+  expect_equal(d$dv, c(YY = "YY"))
+  
+  d <- validate_design(id = c(x = "XX"), dv = c(y = "YY"))
+  expect_equal(d$id, c(x = "XX"))
+  expect_equal(d$dv, c(y = "YY"))
+})
+
+test_that("design", {
+  
+  id = "id"
+  dv = "dv"
+  within = list(time = c(am = "Day", pm = "Night"))
+  between = list(pet = c(cat = "Cats", dog = "Dogs"))
+  labels = list(
+    id = "ID", # could also be specified by name/val of id arg
+    dv = "Score",
+    time = "Time of Day",
+    pet = "Type of Pet"
+  )
+  dist = c(dv = "pois") # named by dv
+  params = dplyr::tribble(
+    ~pet, ~time, ~.r, ~.r, ~.r, ~.r, ~lambda,
+    "cat", "am",  NA, 0.1, 0.2, 0.3, 1,
+    "cat", "pm",  NA,  NA, 0.4, 0.5, 2,
+    "dog", "am",  NA,  NA,  NA, 0.6, 1,
+    "dog", "pm",  NA,  NA,  NA,  NA, 3
+  )
+  
+  d1 <- design(id, dv, within, between, labels, dist, params)
+  
+  
+  params = data.frame(
+    pet = c("cat", "cat", "dog", "dog"),
+    time = c("am", "pm", "am", "pm"),
+    .r.cat.am = c(NA, NA, NA, NA), # must start with .r,
+    .r.cat.pm = c(.1, NA, NA, NA), # after is ignored and assumed
+    .r.dog.am = c(.2, .4, NA, NA), # in the same order as the factor cols
+    .r.dog.pm = c(.3, .5, .6, NA),
+    lambda = c(1, 2, 1, 3)
+  )
+  
+  d2 <- design(id, dv, within, between, labels, dist, params)
+  
+  
+  id = c(id = "ID") # overwritten by labels?
+  dv = c(score = "Test Score", 
+         sleep = "Hours of Sleep")
+  between = list(pet = c(cat = "Cats", dog = "Dogs"))
+  labels = list(
+    score = "Score",
+    pet = "Type of Pet"
+  )
+  dist = c(score = "norm", sleep = "trumcnorm")
+  params = list(
+    score = dplyr::tribble(
+      ~pet, ~mean, ~sd,
+      "cat",    1, 0.5,
+      "dog",    3, 0.7
+    ),
+    sleep = dplyr::tribble(
+      ~pet, ~mean, ~sd, ~a, ~b,
+      "cat",   15,   5,  0, 24,
+      "dog",   12,   4,  0, 24
+    )
+  )
+    
+  d3 <- design(id, dv, within, between, labels, dist, params)
+})

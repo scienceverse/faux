@@ -620,3 +620,16 @@ test_that("likert labels", {
   # counts <- data.frame(q = q4) %>% dplyr::count(q)
   # expect_equal(cumsum(counts$n), floor(unname(p)*100) + 2)
 })
+
+# scale distributions ----
+test_that("rscale", {
+  replicate(200, {
+    a <- sample(0:10, 1)
+    b <- a + sample(1:10, 1)
+    mean <- sample(seq(a, b, .1), 1)
+    sd <- sample(seq(.1, b-a, .1), 1)
+    
+    x <- rscale(1000, a, b, mean, sd)
+    expect_true(all(x %in% a:b))
+  })
+})

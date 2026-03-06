@@ -45,7 +45,7 @@ sim_df(
 a tbl
 }
 \description{
-Produces a data table with the same distributions and correlations 
+Produces a data table with the same distributions and correlations
 as an existing data table Only returns numeric columns and simulates all numeric variables from a continuous normal distribution (for now).
 }
 \details{

@@ -303,8 +303,8 @@ norm2binom <- function(x, size = 1, prob = 0.5, mu = mean(x), sd = stats::sd(x))
 #' @param size target for number of successful trials, or dispersion parameter (the shape parameter of the gamma mixing distribution). (size > 0)
 #' @param prob the probability of success on each trial (0 to 1)
 #' @param mu alternative parametrization via mean (only specify one of prob or mu)
-#' @param lower.tail logical; if TRUE (default), probabilities are P[$X <= x$], otherwise, P[$X > x$]
-#' @param log.p logical; if TRUE, probabilities p are given as log(p)
+#' @param lower.tail logical; if TRUE (default), probabilities are $P(X <= x)$, otherwise, $P(X > x)$
+#' @param log.p logical; if TRUE, probabilities p are given as $log(p)$
 #' @param x_mu the mean of x (calculated from x if not given)
 #' @param x_sd the SD of x (calculated from x if not given)
 #'
@@ -599,6 +599,42 @@ rlikert <- function(n, prob, labels = names(prob)) {
   labels <- labels %||% 1:length(prob)
   if (!is.numeric(labels)) labels <- factor(labels, labels, labels)
   sample(labels, n, replace = TRUE, prob = prob)
+}
+
+#' Random scale distribution
+#'
+#' @param n the number of observations
+#' @param a the minimum value of the scale
+#' @param b the maximum value of the scale
+#' @param mean the population mean
+#' @param sd the population standard deviation
+#'
+#' @return a vector sampled from a truncated normal distribution with the specified parameters and rounded to return only integer values
+#' @export
+#'
+#' @examples
+#' rscale(10, 0, 20, 7.3, 4.2)
+rscale <- function(n, a, b, mean, sd) {
+  x <- truncnorm::rtruncnorm(
+    n = n, 
+    a = a-.499999, 
+    b = b+.499999, 
+    mean = mean, 
+    sd = sd
+  )
+  
+  x <- as.integer(round(x))
+  
+  # if (faux_options("plot")) {
+  #   g <- ggplot2::ggplot(mapping=ggplot2::aes(x)) +
+  #     ggplot2::geom_histogram(binwidth = 1, 
+  #                             fill = "white", 
+  #                             color = "black") +
+  #     ggplot2::scale_x_continuous(breaks = a:b, limits = c(a-.5, b+.5))
+  #   print(g)
+  # }
+  
+  return(x)
 }
 
 

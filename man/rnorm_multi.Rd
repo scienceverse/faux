@@ -25,7 +25,7 @@ rnorm_multi(
 
 \item{sd}{the standard deviations of the variables (numeric vector of length 1 or vars)}
 
-\item{r}{the correlations among the variables (can be a single number, vars\*vars matrix, vars\*vars vector, or a vars\*(vars-1)/2 vector)}
+\item{r}{the correlations among the variables (can be a single number, vars$\times$vars matrix, vars$\times$vars vector, or a vars$\times$(vars-1)/2 vector)}
 
 \item{varnames}{optional names for the variables (string vector of length vars) defaults if r is a matrix with column names}
 

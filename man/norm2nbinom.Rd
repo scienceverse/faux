@@ -24,9 +24,9 @@ norm2nbinom(
 
 \item{mu}{alternative parametrization via mean (only specify one of prob or mu)}
 
-\item{lower.tail}{logical; if TRUE (default), probabilities are P[$X <= x$], otherwise, P[$X > x$]}
+\item{lower.tail}{logical; if TRUE (default), probabilities are $P(X <= x)$, otherwise, $P(X > x)$}
 
-\item{log.p}{logical; if TRUE, probabilities p are given as log(p)}
+\item{log.p}{logical; if TRUE, probabilities p are given as $log(p)$}
 
 \item{x_mu}{the mean of x (calculated from x if not given)}
 
@@ -36,7 +36,7 @@ norm2nbinom(
 a vector with a negative binomial distribution
 }
 \description{
-See the help for `qnbinom()` for further info about prob versus mu parameter specification. Thanks for the suggested code, David Hugh-Jones!
+See the help for \code{qnbinom()} for further info about prob versus mu parameter specification. Thanks for the suggested code, David Hugh-Jones!
 }
 \examples{
 

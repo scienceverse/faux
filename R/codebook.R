@@ -1,6 +1,6 @@
 #' Create PsychDS Codebook from Data
 #' 
-#' See \href{../doc/codebook.html}{\code{vignette("codebook", package = "faux")}} for details.
+#' See [`vignette("codebook", package = "faux")`](../doc/codebook.html) for details.
 #'
 #' @param data The data frame to generate a codebook for
 #' @param name The name of this dataset (if NULL, will be the same as `data`, limited to 64 characters)
@@ -92,7 +92,7 @@ codebook <- function(data, name = NULL, vardesc = list(), ...,
   
   # get vardesc from design
   design <- get_design(data)
-  if (!is.null(design)) {
+  if (!is.null(design) & length(design) > 0) {
     win <- ifelse(length(design$within) > 0,
                   names(design$within), "")
     if (win %in% names(data)) {

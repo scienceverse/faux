@@ -30,7 +30,7 @@ sim_mixed_df(
 a tbl
 }
 \description{
-\code{sim_mixed_df()} produces a data table with the same distributions of 
+\code{sim_mixed_df()} produces a data table with the same distributions of
 by-subject and by-item random intercepts as an existing data table.
 }
 \examples{

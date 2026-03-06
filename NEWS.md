@@ -9,6 +9,7 @@
 
 * Data frames created with `sim_design()` now have column labels that can be used by ggplot2 4.0 for figure labels.
 * `sim_params()` added to get simulations parameters
+* `rscale()` function for simulating scale data from min, max,  mean and SD
 
 ## Semi-Breaking Changes
 

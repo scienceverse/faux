@@ -19,7 +19,7 @@ contr_code_treatment(fct, levels = NULL, base = 1, colnames = NULL)
 the factor with contrasts set
 }
 \description{
-Treatment coding sets the mean of the reference level (base) as the intercept. 
+Treatment coding sets the mean of the reference level (base) as the intercept.
 Each contrast compares one level with the reference level.
 }
 \examples{

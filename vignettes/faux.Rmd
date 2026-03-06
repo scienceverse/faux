@@ -1,0 +1,147 @@
+---
+title: "faux"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{faux}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(faux)
+library(patchwork)
+```
+
+
+## Simulate data for a factorial design
+
+### sim_design
+
+See the [Simulate by Design vignette](articles/sim_design.html) for more details.
+
+```{r}
+#| label: fig-sim-design
+#| fig-width: 8
+#| fig-height: 4
+#| fig-cap: "Default design plot"
+between <- list(pet = c(cat = "Cat Owners", 
+                        dog = "Dog Owners"))
+within <- list(time = c("morning", 
+                        "noon", 
+                        "evening", 
+                        "night"))
+mu <- data.frame(
+  cat    = c(10, 12, 14, 16),
+  dog    = c(10, 15, 20, 25),
+  row.names = within$time
+)
+df <- sim_design(within, between, 
+                 n = 100, mu = mu, 
+                 sd = 5, r = .5)
+```
+
+
+```{r}
+#| label: fig-design
+#| fig-cap: "Plot the data with different visualisations."
+p1 <- plot_design(df)
+p2 <- plot_design(df, "pet", "time")
+
+p1 + p2 + plot_layout(ncol = 1)
+```
+
+### pipeline
+
+You can also use the new pipeline functions to simulate data from a fixed design.
+
+```{r}
+pipe_df <- add_random(id = 200) |>
+  add_between(pet = c(cat = "Cat Owners", 
+                      dog = "Dog Owners")) |>
+  add_within(time = c("morning", 
+                      "noon", 
+                      "evening", 
+                      "night")) |>
+  add_dv(vars = "dv",
+         between = list(pet = "cat"),
+         mean = c(10, 12, 14, 16),
+         sd = 5, r = .5, 
+         empirical = TRUE) |>
+  add_dv(vars = "dv",
+         between = list(pet = "dog"),
+         mean = c(10, 15, 20, 25),
+         sd = 5, r = 0, 
+         empirical = TRUE) |>
+  add_labels(id = "ID", 
+             dv = "Score", 
+             pet = "Pet Type", 
+             time = "Time of Day")
+  
+```
+
+```{r}
+sample_params(pipe_df)
+```
+
+
+```{r}
+pipe_wide <- long2wide(pipe_df)
+# check IDs
+```
+
+
+
+## Simulate new data from an existing data table
+
+See the [Simulate from Existing Data vignette](articles/sim_df.html) for more details.
+
+```{r sim-df}
+new_iris <- sim_df(iris, 50, between = "Species") 
+```
+
+```{r}
+#| label: fig-iris-sim
+#| echo: false
+#| fig-cap: "Simulated iris dataset"
+
+new_iris |>
+  dplyr::mutate_if(is.numeric, round, 1) |>
+  dplyr::mutate(data = "Simulated") |>
+  dplyr::bind_rows(dplyr::mutate(iris, data = "Original")) |>
+  ggplot2::ggplot(ggplot2::aes(x = Sepal.Width, 
+                               y = Sepal.Length, 
+                               color = Species)) +
+  ggplot2::geom_point() +
+  ggplot2::geom_smooth(method = "lm", formula = "y~x") +
+  ggplot2::facet_wrap(~data)
+```
+
+## Simulate data for a mixed design
+
+You can build up a cross-classified or nested mixed effects design using piped functions. See the [contrasts vignette](articles/contrasts.html) for more details.
+
+```{r}
+# simulate 20 classes with 20 to 30 students per class
+data <- add_random(class = 20) |>
+  add_random(student = sample(20:30, 20, replace = TRUE), 
+             .nested_in = "class") |>
+  add_between(.by = "class", 
+              school_type = c("private","public"), 
+              .prob = c(5, 15)) |>
+  add_between(.by = "student",
+              gender = c("M", "F", "NB"),
+              .prob = c(.49, .49, .02))
+```
+
+```{r}
+#| echo: false
+dplyr::count(data, school_type, gender) |>
+  knitr::kable()
+```

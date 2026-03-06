@@ -7,7 +7,8 @@
 cormat(cors = 0, vars = 3)
 }
 \arguments{
-\item{cors}{the correlations among the variables (can be a single number, vars\*vars matrix, vars\*vars vector, or a vars\*(vars-1)/2 vector)}
+\item{cors}{the correlations among the variables (can be a single number,
+vars$\times$vars matrix, vars$\times$vars vector, or a vars$\times$(vars-1)/2 vector)}
 
 \item{vars}{the number of variables in the matrix}
 }
@@ -15,8 +16,8 @@ cormat(cors = 0, vars = 3)
 matrix
 }
 \description{
-\code{cormat} makes a correlation matrix from a single number, 
-vars\*vars matrix, vars\*vars vector, or a vars\*(vars-1)/2 vector.
+\code{cormat} makes a correlation matrix from a single number,
+vars$\times$vars matrix, vars$\times$vars vector, or a vars$\times$(vars-1)/2 vector.
 }
 \examples{
 cormat(.5, 3)

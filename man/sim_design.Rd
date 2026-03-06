@@ -40,7 +40,7 @@ sim_design(
 
 \item{empirical}{logical. If true, mu, sd and r specify the empirical not population mean, sd and covariance}
 
-\item{long}{Whether the returned tbl is in wide or long format (defaults to value of `faux_options("long")`)}
+\item{long}{Whether the returned tbl is in wide or long format (defaults to value of \code{faux_options("long")})}
 
 \item{dv}{the name of the dv for long plots (defaults to y)}
 

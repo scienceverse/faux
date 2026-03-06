@@ -55,10 +55,11 @@ long2wide <- function(data, within = c(), between = c(), dv = "y", id = "id", se
   
   if ("design" %in% names(attributes(data))) {
     attributes(d1)$design <- design
+    d1 <- add_labels_from_design(d1)
   }
   class(d1) <- c("faux", "data.frame")
   rownames(d1) <- NULL
-  d1 <- add_labels(d1)
+  
   
   d1
 }

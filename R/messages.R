@@ -1,8 +1,8 @@
 #' Less scary green messages
 #'
-#' @param ... message components (see \code{\link[base]{message}})
-#' @param domain (see \code{\link[base]{message}})
-#' @param appendLF append new line? (see \code{\link[base]{message}})
+#' @param ... message components (see [base::message()])
+#' @param domain (see [base::message()])
+#' @param appendLF append new line? (see [base::message()])
 #'
 #' @return TRUE
 #' @keywords internal

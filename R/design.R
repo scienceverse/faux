@@ -6,7 +6,7 @@
 #' 
 #' This function returns a validated design list for use in sim_data to simulate a data table with this design, or to archive your design.
 #' 
-#' See \href{../doc/sim_design.html}{\code{vignette("sim_design", package = "faux")}} for details.
+#' See [`vignette("sim_design", package = "faux")`](../doc/sim_design.html) for details.
 #' 
 #' @param within a list of the within-subject factors
 #' @param between a list of the between-subject factors
@@ -91,8 +91,8 @@ check_design <- function(within = list(), between = list(),
       sapply(any)
     
     stop("These level names have the separator '", sep, "' in them: ", 
-            paste(all_levels[has_sep], collapse = ", "),
-            "\nPlease change the names (see fix_name_labels) or choose another separator character using the sep argument or faux_options(sep = '~')\n",
+         paste(all_levels[has_sep], collapse = ", "),
+         "\nPlease change the names (see fix_name_labels) or choose another separator character using the sep argument or faux_options(sep = '~')\n",
          "safe separators for your factor labels are: ",
          paste(seps[safe_sep], collapse = ","))
   }
@@ -102,7 +102,7 @@ check_design <- function(within = list(), between = list(),
   #   between <- lapply(between, fix_name_labels, pattern = pattern)
   #   within <- lapply(within, fix_name_labels, pattern = pattern)
   # }
-
+  
   # check for duplicate factor names ----
   all_names <- c(names(within), names(between))
   factor_overlap <- duplicated(all_names)
@@ -291,7 +291,7 @@ print.design <- function(x, ...) {
 #' design <- get_design(data)
 #' data2 <- sim_design(design, plot = FALSE)
 get_design <- function(data) {
-  attributes(data)$design
+  design <- attributes(data)$design %||% list()
 }
 
 
@@ -316,3 +316,215 @@ set_design <- function(data, design) {
   data
 }
 
+
+#' Convert design to JSON
+#' 
+#' Convert a design list to JSON notation for archiving (e.g. in scienceverse)
+#'
+#' @param design a design list including within, between, n, mu, sd, r, dv, id
+#' @param filename option name of file to save the json to
+#' @param digits number of digits to save
+#' @param pretty whether to print condensed or readable
+#' @param ... other options to send to jsonlite::toJSON
+#'
+#' @return a JSON string
+#' @export
+#'
+#' @examples
+#' des <- check_design(2,2)
+#' json_design(des)
+#' json_design(des, pretty = TRUE)
+json_design <- function(design, filename = NULL, 
+                        digits = 8, pretty = FALSE, ...) {
+  valid_design <-  check_design(design = design, plot = FALSE)
+  valid_design$params <- NULL
+  
+  j <- jsonlite::toJSON(valid_design, auto_unbox = TRUE, digits = digits, pretty = pretty, ...)
+  
+  if (!is.null(filename)) {
+    # fix filename
+    if (!length(grep("\\.json$", filename))) {
+      # add .json extension if not already specified
+      filename <- paste0(filename, ".json")
+    }
+  
+    writeLines(j, filename)
+  }
+  
+  j
+}
+
+#' Get design from long data
+#' 
+#' Makes a best guess at the design of a long-format data frame. 
+#' 
+#' Finds all columns that contain a single value per unit of analysis (between factors), 
+#' all columns that contain the same values per unit of analysis (within factors), and 
+#' all columns that differ over units of analysis (dv, continuous factors)
+#' 
+#' @param data the data frame (in long format)
+#' @param dv the column name that identifies the DV
+#' @param id the column name(s) that identify a unit of analysis
+#' @param plot whether to show a plot of the design
+#' 
+#' @return a design list
+#' 
+#' @export
+#'
+get_design_long <- function(data, 
+                            dv = c(y = "score"), 
+                            id = c(id = "id"), 
+                            plot = faux_options("plot")) {
+  if (is.null(names(id))) names(id) <- id
+  if (is.null(names(dv))) names(dv) <- dv
+  
+  # check for columns where there is only ever one value per id
+  y <- by(data, data[names(id)], function(x) {
+    unique_vals <- lapply(x, unique)
+    n_unique_vals <- lapply(unique_vals, length)
+    as.data.frame(n_unique_vals)
+  })
+  
+  z <- do.call(rbind, y)
+  factors <- lapply(z, function(x) {
+    ifelse(max(x) > 1, "W", "B")
+  })
+  
+  # get rid of id and dv columns
+  cnames <- setdiff(names(data), c(names(id), names(dv)))
+  factors <- factors[names(factors) %in% cnames]
+  
+  between_factors <- names(factors[which(factors == "B")])
+  within_factors <- names(factors[which(factors == "W")])
+  
+  # get levels for each column
+  lvls <- data[, names(data) %in% cnames, drop = FALSE]
+  lvls <- lapply(lvls, unique)
+  lvls <- lapply(lvls, as.character)
+  lvls <- lapply(lvls, fix_name_labels)
+  
+  within <- lvls[which(names(lvls) %in% within_factors)]
+  between <- lvls[which(names(lvls) %in% between_factors)]
+  
+  # define columns
+  cells_w <- cell_combos(within, names(dv))
+  cells_b <- cell_combos(between, names(dv)) 
+  
+  # get n, mu, sd, r per cell
+  chk <- sample_params(data, between_factors, within_factors, 
+                       names(dv), names(id), digits = 8)
+  
+  if (length(between_factors)) {
+    chk_b <- chk
+    
+    x <- chk[between_factors]; x$sep = "_";
+    b <- do.call(paste, x)
+    chk_b$`.between` <- factor(b, cells_b)
+    chk_b <- chk_b[order(chk_b$`.between`), , drop = FALSE]
+    chk_b[between_factors] <- NULL
+  } else {
+    chk_b <- chk
+    chk_b$`.between` <- names(dv)
+  }
+  
+  get_stat <- function(stat) {
+    x <- as.data.frame(chk_b[, c(".between", within_factors, stat)])
+    # y <- stats::reshape(x, timevar = within_factors, 
+    #                     idvar = ".between", 
+    #                     direction = "wide")
+    # rownames(y) <- y$`.between`
+    # y$`.between` <- NULL
+    # names(y) <- gsub(paste0(stat, "\\."), "", names(y))
+    # y <- y[, order(cells_w)] # FIX: check if needed?
+    # y
+    x[[stat]]
+  }
+  
+  n <- get_stat("n")
+  sd <- get_stat("sd")
+  mu <- get_stat("mean")
+  
+  x <- chk_b[, c(".between", within_factors, cells_w)] %>% as.data.frame()
+  r <- by(x, x$`.between`, function(y) {
+    rownames(y) <- cells_w
+    y <- y[cells_w, cells_w]
+    as.matrix(y)
+  })
+  
+  attr(r, "call") <- NULL
+  class(r) <- "list"
+  
+  check_design(within = within, between = between, 
+               n = n, mu = mu, sd = sd, r = r, 
+               dv = dv, id = id, plot = plot)
+}
+
+
+
+# new design functions ----
+
+new_design <- function(id = c(id = "ID"), 
+                       dv = c(y = "DV"), 
+                       within = list(), 
+                       between = list(), 
+                       labels = list(),
+                       dist = "norm",
+                       params = NULL,
+                       r = 0) {
+  d <- list(
+    id = id,
+    dv = dv,
+    within = within,
+    between = between,
+    labels = labels,
+    dist = dist,
+    params = params,
+    r = r
+  )
+  class(d) <- c("design")
+  
+  return(d)
+}
+
+validate_design <- function(design = new_design(), ...) {
+  if (is.list(design)) list2env(design, envir = environment())
+  
+  # overwrite design with any named values
+  list2env(list(...), envir = environment())
+  
+  # validate each aspect ----
+  
+  ## set names of vectors if missing ----
+  names(id) <- rep_if(names(id) %||% id, id, "")
+  names(dv) <- rep_if(names(dv) %||% dv, dv, "")
+  within <- lapply(within, \(x) rep_if(names(x) %||% x, x, ""))
+  between <- lapply(between, \(x) rep_if(names(x) %||% x, x, ""))
+  
+  new_design(id = id,
+             dv = dv,
+             within = within,
+             between = between,
+             labels = labels,
+             dist = dist,
+             params = params,
+             r = r)
+}
+
+design <- function(id = c(id = "ID"), 
+                   dv = c(y = "DV"), 
+                   within = list(), 
+                   between = list(), 
+                   labels = list(),
+                   dist = "norm",
+                   params = NULL,
+                   r = 0) {
+  d <- validate_design(id = id,
+                  dv = dv,
+                  within = within,
+                  between = between,
+                  labels = labels,
+                  dist = dist,
+                  params = params,
+                  r = r)
+  return(d)
+}

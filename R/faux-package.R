@@ -8,3 +8,7 @@
 #' @importFrom stats cor sd
 "_PACKAGE"
 
+## usethis namespace: start
+#' @importFrom lifecycle deprecated
+## usethis namespace: end
+NULL

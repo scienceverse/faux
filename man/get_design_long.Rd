@@ -27,7 +27,7 @@ a design list
 Makes a best guess at the design of a long-format data frame.
 }
 \details{
-Finds all columns that contain a single value per unit of analysis (between factors), 
-all columns that contain the same values per unit of analysis (within factors), and 
+Finds all columns that contain a single value per unit of analysis (between factors),
+all columns that contain the same values per unit of analysis (within factors), and
 all columns that differ over units of analysis (dv, continuous factors)
 }

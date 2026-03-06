@@ -7,15 +7,15 @@
 \format{
 A data frame with 256326 rows and 9 variables:
 \describe{
-  \item{rater_id}{rater's ID}
-  \item{rater_sex}{rater's sex (female, male, intersex, NA)}
-  \item{rater_age}{rater's age (17-90 years)}
-  \item{rater_sexpref}{rater's preferred sex for romantic relationships (either, men, neither, women, NA)}
-  \item{face_id}{face's ID}
-  \item{face_sex}{face's sex (female, male)}
-  \item{face_age}{face's age (in years)}
-  \item{face_eth}{face's ethnic group}
-  \item{rating}{attractiveness rating on a scale from 1 (much less attractive than average) to 7 (much more attractive than average)}
+\item{rater_id}{rater's ID}
+\item{rater_sex}{rater's sex (female, male, intersex, NA)}
+\item{rater_age}{rater's age (17-90 years)}
+\item{rater_sexpref}{rater's preferred sex for romantic relationships (either, men, neither, women, NA)}
+\item{face_id}{face's ID}
+\item{face_sex}{face's sex (female, male)}
+\item{face_age}{face's age (in years)}
+\item{face_eth}{face's ethnic group}
+\item{rating}{attractiveness rating on a scale from 1 (much less attractive than average) to 7 (much more attractive than average)}
 }
 }
 \source{
