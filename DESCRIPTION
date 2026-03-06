@@ -1,7 +1,7 @@
 Package: faux
 Title: Simulation for Factorial Designs
-Version: 1.2.3.9001
-Date: 2025-10-20
+Version: 1.2.4
+Date: 2026-03-06
 Authors@R: c(
     person(
         given = "Lisa", 
@@ -24,7 +24,7 @@ Authors@R: c(
         email = "andrew@andrewheiss.com",
         comment = c(ORCID = "0000-0002-3948-3914")
     ))
-Description: Create datasets with factorial structure through simulation by specifying variable parameters. Extended documentation at <https://scienceverse.github.io/faux/>. Described in DeBruine (2020) <doi:10.5281/zenodo.2669586>.
+Description: Create datasets with factorial structure through simulation by specifying variable parameters. Extended documentation at <https://www.scienceverse.org/faux/>. Described in DeBruine (2020) <doi:10.5281/zenodo.2669586>.
 Depends:
     R (>= 3.2.4)
 Imports:
@@ -58,6 +58,6 @@ RoxygenNote: 7.3.3
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/scienceverse/faux,
-    https://scienceverse.github.io/faux/
+     https://www.scienceverse.org/faux/
 BugReports: https://github.com/scienceverse/faux/issues
 Config/Needs/website: rmarkdown

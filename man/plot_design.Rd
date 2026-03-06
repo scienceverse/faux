@@ -27,7 +27,7 @@ plot_design(x, ..., geoms = NULL, palette = "Dark2", labeller = "label_value")
 plot
 }
 \description{
-Plots the specified within and between design. See \href{../doc/plots.html}{\code{vignette("plots", package = "faux")}} for examples and details.
+Plots the specified within and between design. See \code{vignette("plots", package = "faux")} for examples and details.
 }
 \section{Functions}{
 \itemize{

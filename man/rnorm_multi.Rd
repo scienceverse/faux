@@ -39,7 +39,7 @@ rnorm_multi(
 a tbl of vars vectors
 }
 \description{
-Make normally distributed vectors with specified relationships. See \href{../doc/rnorm_multi.html}{\code{vignette("rnorm_multi", package = "faux")}} for details.
+Make normally distributed vectors with specified relationships. See \code{vignette("rnorm_multi", package = "faux")} for details.
 }
 \examples{
 # 4 10-item vectors each correlated r = .5

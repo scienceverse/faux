@@ -12,7 +12,7 @@ The faux package provides functions for simulating datasets with specified struc
 Useful links:
 \itemize{
   \item \url{https://github.com/scienceverse/faux}
-  \item \url{https://scienceverse.github.io/faux/}
+  \item \url{https://www.scienceverse.org/faux/}
   \item Report bugs at \url{https://github.com/scienceverse/faux/issues}
 }
 
