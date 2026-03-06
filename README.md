@@ -1,5 +1,5 @@
 
-# faux <a href="https://scienceverse.github.io/faux/"><img src="man/figures/logo.png" align="right" height="120" /></a>
+# faux <a href="https://www.scienceverse.org/faux/"><img src="man/figures/logo.png" align="right" height="120" /></a>
 
 <!-- rmarkdown v1 -->
 
@@ -21,7 +21,7 @@ status](https://codecov.io/gh/scienceverse/faux/branch/master/graph/badge.svg)](
 
 It is useful to be able to simulate data with a specified structure. The
 `faux` package provides some functions to make this process easier. See
-the [package website](https://scienceverse.github.io/faux/) for more
+the [package website](https://www.scienceverse.org/faux/) for more
 details.
 
 ## Installation
