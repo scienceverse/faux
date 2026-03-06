@@ -1,6 +1,6 @@
 #' Plot design
 #'
-#' Plots the specified within and between design. See \href{../doc/plots.html}{\code{vignette("plots", package = "faux")}} for examples and details.
+#' Plots the specified within and between design. See \code{vignette("plots", package = "faux")} for examples and details.
 #'
 #' @param x A list of design parameters created by check_design() or a data tbl (in long format)
 #' @param ... A list of factor names to determine visualisation (see vignette) in the order color, x, facet row(s), facet col(s)

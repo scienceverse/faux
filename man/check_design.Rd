@@ -58,7 +58,7 @@ Specify n for each between-subject cell; mu and sd for each cell, and r for the 
 
 This function returns a validated design list for use in sim_data to simulate a data table with this design, or to archive your design.
 
-See \href{../doc/sim_design.html}{\code{vignette("sim_design", package = "faux")}} for details.
+See \code{vignette("sim_design", package = "faux")} for details.
 }
 \examples{
 

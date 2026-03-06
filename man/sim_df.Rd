@@ -49,7 +49,7 @@ Produces a data table with the same distributions and correlations
 as an existing data table Only returns numeric columns and simulates all numeric variables from a continuous normal distribution (for now).
 }
 \details{
-See \href{../doc/sim_df.html}{\code{vignette("sim_df", package = "faux")}} for details.
+See \code{vignette("sim_df", package = "faux")} for details.
 }
 \examples{
 iris100 <- sim_df(iris, 100)

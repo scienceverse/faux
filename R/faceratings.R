@@ -14,7 +14,7 @@
 #'   \item{face_eth}{face's ethnic group}
 #'   \item{rating}{attractiveness rating on a scale from 1 (much less attractive than average) to 7 (much more attractive than average)}
 #' }
-#' @source \url{https://doi.org/10.6084/m9.figshare.5047666}
+#' @source \doi{https://doi.org/10.6084/m9.figshare.5047666}
 "faceratings"
 
 #' Attractiveness rating subset
@@ -34,5 +34,5 @@
 #'   \item{face_eth}{face's ethnic group (black, east_asian, west_asian, white)}
 #'   \item{rating}{attractiveness rating on a scale from 1 (much less attractive than average) to 7 (much more attractive than average)}
 #' }
-#' @source \url{https://doi.org/10.6084/m9.figshare.5047666}
+#' @source \doi{https://doi.org/10.6084/m9.figshare.5047666}
 "fr4"
