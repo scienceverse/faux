@@ -58,6 +58,6 @@ RoxygenNote: 7.3.3
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/scienceverse/faux,
-    https://www.scienceverse.org/faux/
+     https://www.scienceverse.org/faux/
 BugReports: https://github.com/scienceverse/faux/issues
 Config/Needs/website: rmarkdown
