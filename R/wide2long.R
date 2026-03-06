@@ -65,6 +65,7 @@ wide2long <- function(data, within_factors = c(), within_cols = c(),
   attributes(longdat)$design <- design
   class(longdat) <- c("faux", "data.frame")
   rownames(longdat) <- NULL
+  longdat <- add_labels(longdat)
   
   longdat
 }
