@@ -1,6 +1,6 @@
 #' Multiple correlated normal distributions
 #' 
-#' Make normally distributed vectors with specified relationships. See [`vignette("rnorm_multi", package = "faux")`](../doc/rnorm_multi.html) for details.
+#' Make normally distributed vectors with specified relationships. See \code{vignette("rnorm_multi", package = "faux")} for details.
 #'
 #' @param n the number of samples required
 #' @param vars the number of variables to return

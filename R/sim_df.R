@@ -3,7 +3,7 @@
 #' Produces a data table with the same distributions and correlations 
 #' as an existing data table Only returns numeric columns and simulates all numeric variables from a continuous normal distribution (for now).
 #' 
-#' See [`vignette("sim_df", package = "faux")`](../doc/sim_df.html) for details.
+#' See \code{vignette("sim_df", package = "faux")} for details.
 #'
 #' @param data the existing tbl
 #' @param n the number of samples to return per group

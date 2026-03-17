@@ -33,7 +33,7 @@ codebook(
 a list or json-formatted codebook, or reformatted data with the codebook as an attribute
 }
 \description{
-See \href{../doc/codebook.html}{\code{vignette("codebook", package = "faux")}} for details.
+See \code{vignette("codebook", package = "faux")} for details.
 }
 \examples{
 

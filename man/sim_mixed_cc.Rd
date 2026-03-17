@@ -36,7 +36,7 @@ sim_mixed_cc(
 a tbl
 }
 \description{
-Makes a basic cross-classified design with random intercepts for subjects and items. See \href{../doc/sim_mixed.html}{\code{vignette("sim_mixed", package = "faux")}} for examples and details.
+Makes a basic cross-classified design with random intercepts for subjects and items. See \code{vignette("sim_mixed", package = "faux")} for examples and details.
 }
 \examples{
 

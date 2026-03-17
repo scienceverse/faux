@@ -1,6 +1,6 @@
 #' Create PsychDS Codebook from Data
 #' 
-#' See [`vignette("codebook", package = "faux")`](../doc/codebook.html) for details.
+#' See \code{vignette("codebook", package = "faux")} for details.
 #'
 #' @param data The data frame to generate a codebook for
 #' @param name The name of this dataset (if NULL, will be the same as `data`, limited to 64 characters)

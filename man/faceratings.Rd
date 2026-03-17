@@ -19,7 +19,7 @@ A data frame with 256326 rows and 9 variables:
 }
 }
 \source{
-\url{https://figshare.com/articles/dataset/Face_Research_Lab_London_Set/5047666}
+\doi{https://doi.org/10.6084/m9.figshare.5047666}
 }
 \usage{
 faceratings

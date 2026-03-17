@@ -1,6 +1,6 @@
 #' Generate a cross-classified sample 
 #' 
-#' Makes a basic cross-classified design with random intercepts for subjects and items. See [`vignette("sim_mixed", package = "faux")`](../doc/sim_mixed.html) for examples and details.
+#' Makes a basic cross-classified design with random intercepts for subjects and items. See \code{vignette("sim_mixed", package = "faux")} for examples and details.
 #'
 #' @param sub_n the number of subjects
 #' @param item_n the number of items
