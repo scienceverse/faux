@@ -58,6 +58,7 @@ long2wide <- function(data, within = c(), between = c(), dv = "y", id = "id", se
   }
   class(d1) <- c("faux", "data.frame")
   rownames(d1) <- NULL
+  d1 <- add_labels(d1)
   
   d1
 }

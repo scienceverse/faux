@@ -1,5 +1,7 @@
 # faux (development version)
 
+* Data frames created with `sim_design()` now have column labels that can be used by ggplot2 4.0 for figure labels.
+
 # faux 1.2.3 (2025-09-25)
 
 * Fixed failing tests due to ggplot2 4.0 ggplot object structure changes

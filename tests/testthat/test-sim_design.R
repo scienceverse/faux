@@ -596,7 +596,7 @@ test_that("unnested reps", {
   n <- 10
   df <- sim_design(2, n = n, rep = rep, nested = FALSE, plot = FALSE)
   expect_equal(nrow(df), rep*n)
-  expect_equal(df$rep, rep(1:rep, each = n))
+  expect_equivalent(df$rep, rep(1:rep, each = n), )
 })
 
 # empirical ----
@@ -706,7 +706,7 @@ test_that("vardesc", {
   )
   
   vardesc <- list(B = "Between-Subject Factor",
-                       W = "Within-Subject Factor")
+                  W = "Within-Subject Factor")
   
   expect_silent(dat <- sim_design(within, between, vardesc = vardesc))
   design <- get_design(dat)

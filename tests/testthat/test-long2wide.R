@@ -132,4 +132,5 @@ test_that("from design", {
   expect_equal(names(dwide2), c("rater_id", "rater_sex", "black", "east_asian", "west_asian", "white"))
 })
 
+
 faux_options(plot = TRUE)

@@ -52,7 +52,7 @@ test_that("fh_bounds", {
 })
 
 test_that("fh_bounds variation check", {
-  skip("long checking function")
+  skip("long simulation")
   
   x <- lapply(1:50, function(x) {
     fh_bounds("pois", "binom",  

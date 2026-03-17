@@ -213,6 +213,7 @@ sim_data <- function(design, empirical = FALSE,
   }
   
   class(df_return) <- c("faux", "data.frame")
+  rownames(df_return) <- c() # get rid of row names
   
   if (rep == 1) {
     df_return$.rep. <- NULL
@@ -220,7 +221,7 @@ sim_data <- function(design, empirical = FALSE,
     # nest reps
     df_rep <- by(df_return, df_return$.rep., function(x) {
       x$.rep. <- NULL
-      x
+      add_labels(x, design)
     })
     df_return <- data.frame(rep = 1:rep)
     df_return$data <- df_rep # can't assign list in data.frame
@@ -230,6 +231,68 @@ sim_data <- function(design, empirical = FALSE,
     df_return <- df_return[order(df_return$rep),] 
   }
   
-  rownames(df_return) <- c() # get rid of row names
+  df_return <- add_labels(df_return, design) # add column labels
+  
   return(df_return)
+}
+
+
+#' Add Labels to Data Tables
+#'
+#' @param data a data table
+#' @param design a design specification (if NULL, is read from data)
+#'
+#' @returns a data frame with labelled columns
+#' @keywords internal
+add_labels <- function(data, design = NULL) {
+  if ("design" %in% names(attributes(data))) {
+    # get parameters from design
+    design <- get_design(data)
+  } 
+  
+  if (is.null(design)) return(data)
+  
+  # nested
+  if ("rep" %in% names(data)) 
+    attr(data$rep, "label") <- "replicate index"
+  
+  if ("data" %in% names(data)) {
+    data$data <- lapply(data$data, add_labels, design = design)
+    attr(data$data, "label") <- "data"
+    
+    return(data)
+  }
+  
+  # id column
+  id <- names(design$id)
+  attr(data[[id]], "label") <- design$id[[1]]
+  
+  # dv / within
+  dv <- names(design$dv)
+  if (dv %in% names(data)) {
+    attr(data[[dv]], "label") <- design$dv[[1]]
+    
+    # long within
+    for (w in names(design$within)) {
+      attr(data[[w]], "label") <- design$vardesc[[w]]
+    }
+  } else if (length(design$within)) {  # wide within
+    exp <- expand.grid(rev(design$within))
+    w_labels <- apply(exp, 1, function(x) { 
+      paste(rev(x), collapse = ":") 
+    })
+    within_cols <- cell_combos(design$within, sep = design$sep) 
+    names(w_labels) <- within_cols
+    
+    for (nm in within_cols) {
+      attr(data[[nm]], "label") <- w_labels[[nm]]
+    }
+  }
+  
+  # between
+  for (b in names(design$between)) {
+    attr(data[[b]], "label") <- design$vardesc[[b]]
+  }
+  
+  return(data)
 }
